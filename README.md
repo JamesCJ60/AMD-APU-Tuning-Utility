@@ -29,9 +29,8 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 
 ## Installation
 - Go to [release page](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/releases)
-- Download the Windows Download file
-- Read the [Installation and Important info.txt] file before use.. (do not need to do with V2 and up)
-- Install the bundled SqlLocalDB.msi installer included in the AATU download if you haven't done so already (also not needed with V2 and up)
+- Download the .zip file starting with AATU
+- Extract the zip using 7Zip or Winrar
 - Have fun!!!
 
 ## Disclaimers & Cautions
@@ -39,6 +38,3 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 - If you intend to use AMD APU Tuning Utility in a video/text post online (e.g. YouTube, Reddit) please credit the AMD APU Tuning Utility team by linking to the AMD APU Tuning Utility GitLab release page! We ask this so that viewers/readers can download the software from a trusted source and so the developers get the proper recognition for their work.
 - AMD APU Tuning Utility Team is not liable for any damages that my occur from using AMD APU Tuning Utility or RyzenADJ, Please use at your own risk!
 - "AMD", "APU", "Ryzen", and "AMD Ryzen" are trademarked by and belong to Advanced Micro Devices, Inc. "ROG", and "Armoury Crate" are trademarked by and belong to AsusTek Computer, Inc. AMD APU Tuning Utility Team makes no claims to these assets and uses them for informational purposes only.
-
-## Pre-requisite (Only for V1)
-- LocalDB 2017 or up for the preset system which can be found [here](https://go.microsoft.com/fwlink/?LinkID=866658) (This is included in the AATU download as SqlLocalDB.msi, also not needed with V2 and up)
