@@ -14,7 +14,7 @@ As seen in: https://www.youtube.com/watch?v=9GfP8aaQPAg & https://www.youtube.co
 - [Benefits](#benefits-of-using-aatu)
 - [Installation](#installation)
 - [Disclaimers & Cautions](#disclaimers-cautions)
-- [Pre-requisite](#pre-requisite)
+- [Source Code](#source-code)
 
 ## What is AATU?
 - It's a new Ryzen Mobile APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
