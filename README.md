@@ -28,7 +28,7 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 *stock power limits and results will vary depending on the laptop make, model and specifications. This data is here to prove that you can gain extra performance when allowing more power draw.
 
 ## Installation
-- Go to [release page](https://gitlab.com/JamesCJ/amd-apu-tuning-utility/-/releases)
+- Go to [release page](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/releases)
 - Download the Windows Download file
 - Read the [Installation and Important info.txt] file before use.. (do not need to do with V2 and up)
 - Install the bundled SqlLocalDB.msi installer included in the AATU download if you haven't done so already (also not needed with V2 and up)
