@@ -8,7 +8,7 @@ The future roadmap of AMD APU Tuning Utility can be found here: https://amdaputu
 
 If you would like to support the development of AMD APU Tuning Utility, you can do so here: https://www.patreon.com/aatusoftware
 
-As seen in: https://www.youtube.com/watch?v=9GfP8aaQPAg & https://www.youtube.com/watch?v=MdfrY8FO7o0
+As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for making the video 🥰)
 
 - [What is AATU?](#what-is-aatu)
 - [Benefits](#benefits-of-using-aatu)
