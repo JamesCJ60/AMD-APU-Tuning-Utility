@@ -50,3 +50,6 @@ You can find all the source code for the many different versions and elements of
 - [AATU V2](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/tree/AATU-V2-Source-Code)
 - [AATU V2 Notification](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/tree/AATU-V2-Notification-Source-Code)
 - [AATU V1](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/tree/AATU-V1-Source-Code)
+
+## Missing files errors
+In the event you get an error from windows that you are missing files, for example, VCRuntime140.dll or ucrtbased.dll try installing/reinstalling Visual C++ found [here](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0)
