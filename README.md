@@ -13,13 +13,19 @@ As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for ma
 - [What is AATU?](#what-is-aatu)
 - [Benefits](#benefits-of-using-aatu)
 - [Installation](#installation)
-- [Disclaimers & Cautions](#disclaimers-cautions)
+- [Disclaimers & Cautions](#disclaimers-&-cautions)
 - [Source Code](#source-code)
 
 ## What is AATU?
 - It's a new Ryzen Mobile APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
 - It's a little lightweight Ryzen Master for laptops that allows you to control the power limits of your APU.
 - Works best on 2xxx, 3xxx, 4xxx and 5xxx series Ryzen Mobile.
+
+### What is adpative eco?
+Adaptive eco is a mode built into AMD APU Tuning Utility that uses an algorithm to lower your APU's power limit over time as your battery life decreases. In short, adaptive eco allows you to keep as much performance as possible while also attempting to improve battery life over time. Adaptive eco does this by constantly monitoring the battery life of your laptop. That data is then used to make adjustments based on that, for example, how much should be removed or added to the APUs power limit while also changing windows power plan settings to further the impact.
+
+### What is adpative performance?
+Adaptive performance is another mode built into AMD APU Tuning Utility that does the opposite of adaptive eco. This mode uses an algorithm that aims to find the best possible power limits for your APU to get the best possible performance. This is done by monitoring the temperatures of the APU and then using this data to balance off the power limits to find the most stable settings for performance.
 
 ## Benefits of using AATU
 Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
