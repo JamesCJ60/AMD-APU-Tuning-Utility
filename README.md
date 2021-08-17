@@ -2,7 +2,7 @@
 
 If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2021` on [discord](https://discord.gg/M3hVqnT4pQ).
 
-Thanks to https://github.com/FlyGoat/RyzenAdj and his author, ryzenadj.exe is included (windows only for now). 
+Thanks to https://github.com/FlyGoat/RyzenAdj and his author, ryzenadj.exe is included.
 
 The future roadmap of AMD APU Tuning Utility can be found here: https://amdaputuningutility.com/news/jul-2021/aaturoadmap.html
 
