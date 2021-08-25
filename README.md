@@ -1,6 +1,7 @@
 # AMD APU Tuning Utility
 
 If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2021` on [discord](https://discord.gg/M3hVqnT4pQ). 
+
 Thanks to https://github.com/FlyGoat/RyzenAdj and its author. If you would like to support the development of AMD APU Tuning Utility, you can do so here: https://www.patreon.com/aatusoftware
 
 - [What is AATU?](#what-is-aatu)
