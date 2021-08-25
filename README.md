@@ -1,14 +1,7 @@
 # AMD APU Tuning Utility
 
-If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2021` on [discord](https://discord.gg/M3hVqnT4pQ).
-
-Thanks to https://github.com/FlyGoat/RyzenAdj and his author, ryzenadj.exe is included.
-
-The future roadmap of AMD APU Tuning Utility can be found here: https://amdaputuningutility.com/news/jul-2021/aaturoadmap.html
-
-If you would like to support the development of AMD APU Tuning Utility, you can do so here: https://www.patreon.com/aatusoftware
-
-As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for making the video 🥰)
+If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2021` on [discord](https://discord.gg/M3hVqnT4pQ). 
+Thanks to https://github.com/FlyGoat/RyzenAdj and its author. If you would like to support the development of AMD APU Tuning Utility, you can do so here: https://www.patreon.com/aatusoftware
 
 - [What is AATU?](#what-is-aatu)
 - [Benefits](#benefits-of-using-aatu)
@@ -20,6 +13,7 @@ As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for ma
 - It's a new Ryzen Mobile APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
 - It's a little lightweight Ryzen Master for laptops that allows you to control the power limits of your APU.
 - Works best on 2xxx, 3xxx, 4xxx and 5xxx series Ryzen Mobile.
+- As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for making the video 🥰)
 
 ### What is adaptive eco?
 Adaptive eco is a mode built into AMD APU Tuning Utility that uses an algorithm to lower your APU's power limit over time as your battery life decreases. In short, adaptive eco allows you to keep as much performance as possible while also attempting to improve battery life over time. Adaptive eco does this by constantly monitoring the battery life of your laptop. That data is then used to make adjustments based on that, for example, how much should be removed or added to the APUs power limit while also changing windows power plan settings to further the impact.
@@ -40,7 +34,6 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 - Have fun!!!
 
 ## Disclaimers & Cautions
-
 - If you intend to use AMD APU Tuning Utility in a video/text post online (e.g. YouTube, Reddit) please credit the AMD APU Tuning Utility team by linking to the AMD APU Tuning Utility GitHub release page! We ask this so that viewers/readers can download the software from a trusted source and so the developers get the proper recognition for their work.
 - AMD APU Tuning Utility Team is not liable for any damages that my occur from using AMD APU Tuning Utility or RyzenADJ, Please use at your own risk!
 - "AMD", "APU", "Ryzen", and "AMD Ryzen" are trademarked by and belong to Advanced Micro Devices, Inc. "ROG", and "Armoury Crate" are trademarked by and belong to AsusTek Computer, Inc. AMD APU Tuning Utility Team makes no claims to these assets and uses them for informational purposes only.
