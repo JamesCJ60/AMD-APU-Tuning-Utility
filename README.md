@@ -35,7 +35,7 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 
 ## Installation
 - Go to [release page](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/releases)
-- Download the .zip file starting with AATU
+- Download the your chosen AATU varients .zip file starting with AATU Stable or AATU Light depending on your chose
 - Extract the zip using 7Zip or Winrar
 - Have fun!!!
 
