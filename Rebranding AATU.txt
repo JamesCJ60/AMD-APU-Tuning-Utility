@@ -1,3 +1,4 @@
+# Rebranding AMD APU Tuning Utility
 In the wake of AATU Light I have decided to rename both AATU V2 and V3 to AATU Standard (V2) and AATU Extreme (V3). All those AATU versions will go under the collective version of V3 with each having its own specific application version.
 
 These 3 AATU variants will also get their own GitHub page where source code can be accessed with ease. The current GitHub page will serve as a release hub for none alpha/beta software collective releases of all the AATU variants. Alpha and Beta releases of the different AATU variants will be found within their own GitHub page.
