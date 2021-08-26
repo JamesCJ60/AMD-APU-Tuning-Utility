@@ -13,7 +13,7 @@ Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would
 ## What is AATU?
 - It's a new Ryzen APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
 - It's a little lightweight Ryzen Master for laptops that allows you to control the power limits of your APU.
-- Works best on 2xxx, 3xxx, 4xxx and 5xxx series Ryzen Mobile and Desktop APUs.
+- Works best on 2xxx, 3xxx, 4xxx and 5xxx series Ryzen Mobile and can aslo be used on Desktop APUs.
 - As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for making the video 🥰)
 
 ### What is adaptive eco?
