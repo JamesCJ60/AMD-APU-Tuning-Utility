@@ -11,7 +11,7 @@ Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would
 - [Source Code](#source-code)
 
 ## What is AATU?
-- It's a new Ryzen Mobile APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
+- It's a new Ryzen APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
 - It's a little lightweight Ryzen Master for laptops that allows you to control the power limits of your APU.
 - Works best on 2xxx, 3xxx, 4xxx and 5xxx series Ryzen Mobile.
 - As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for making the video 🥰)
