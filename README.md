@@ -4,6 +4,7 @@ If you come across any issues or errors with AATU please open an issue or ping `
 
 Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would like to support the development of AMD APU Tuning Utility, you can do so [here](https://www.patreon.com/aatusoftware)
 
+## Readme Index
 - [What is AATU?](#what-is-aatu)
 - [Benefits](#benefits-of-using-aatu)
 - [Installation](#installation)
