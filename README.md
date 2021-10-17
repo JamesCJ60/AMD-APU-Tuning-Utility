@@ -42,6 +42,7 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 
 ## Source Code
 You can find all the source code for the many different versions and elements of AATU below:
+- [AATU Semi-custom Libryzenadj](https://github.com/JamesCJ60/AATU-RyzenAdj)
 - [AATU Extreme](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility-Extreme)
 - [AATU V2](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/tree/AATU-V2-Source-Code)
 - [AATU V2 Notification Pop-up](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/tree/AATU-V2-Notification-Source-Code)
