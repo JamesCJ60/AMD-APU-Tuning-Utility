@@ -28,7 +28,7 @@ Adaptive performance TBO is a modification of the existing power management algo
 
 Turbo Boost Overdrive iGPU is the first to be released. TBO iGPU does what has been stated before, but as you can guess, the iGPU clocks of supported APUs using an offset to calculate the max clock the APU's iGPU can run under load. This mode also solves the static nature of iGPU clocks when manually overclocking them. Thanks to the load-based adjustments to the clock speed, this flaw is worked around.
 
-As a result, this allows the APU to find the best clock speed for that moment in time, saving on both power, reducing temperatures and saving battery life when the highest clocks are not needed while aiming to keep peak performance.
+As a result, this allows the APU to find the best clock speed for that moment in time, saving on power, increasing battery life, while reducing temperatures when the highest clocks are not needed when aiming to keep peak performance.
 
 ## Benefits of using AATU
 Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
