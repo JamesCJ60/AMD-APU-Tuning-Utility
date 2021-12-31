@@ -26,7 +26,7 @@ Adaptive performance is another mode built into AMD APU Tuning Utility that does
 ### What is adaptive performance - Turbo Boost Overdrive?
 Adaptive performance TBO is a modification of the existing power management algorithms used within AMD APU Tuning Utility. The difference is that instead of adjusting TDPs based on just APU temperatures, it adjusts clocks based on load, power limits, and temperatures. 
 
-Turbo Boost Overdrive iGPU is the first to be released. TBO iGPU does what has been stated before, but as you can guess, the iGPU clocks of supported APUs using an offset to calculate the max clock the APU's iGPU can run under load. This mode also solves the static nature of iGPU clocks when manually overclocking them. Thanks to the load-based adjustments to the clock speed, this flaw is worked around.
+Turbo Boost Overdrive iGPU is the first to be released. TBO iGPU does what has been stated before, but as you can guess, to the iGPU clocks of supported APUs using an offset to calculate the max clock the APU's iGPU can run under load. This mode also solves the static nature of iGPU clocks when manually overclocking them. Thanks to the load-based adjustments to the clock speed, this flaw is worked around.
 
 As a result, this allows the APU to find the best clock speed for that moment in time, saving on power, increasing battery life, while reducing temperatures when the highest clocks are not needed when aiming to keep peak performance.
 
