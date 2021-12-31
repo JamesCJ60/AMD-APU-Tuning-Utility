@@ -20,8 +20,11 @@ Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would
 ### What is adaptive eco?
 Adaptive eco is a mode built into AMD APU Tuning Utility that uses an algorithm to lower your APU's power limit over time as your battery life decreases. In short, adaptive eco allows you to keep as much performance as possible while also attempting to improve battery life over time. Adaptive eco does this by constantly monitoring the battery life of your laptop. That data is then used to make adjustments based on that, for example, how much should be removed or added to the APUs power limit while also changing windows power plan settings to further the impact.
 
-### What is adaptive performance?
+### What is adaptive performance - Adpative TDP?
 Adaptive performance is another mode built into AMD APU Tuning Utility that does the opposite of adaptive eco. This mode uses an algorithm that aims to find the best possible power limits for your APU to get the best possible performance. This is done by monitoring the temperatures of the APU and then using this data to balance off the power limits to find the most stable settings for performance.
+
+### What is adaptive performance - Turbo Boost Overdrive?
+Adaptive performance TBO is a modification of the existing power management algorithms used within AMD APU Tuning Utility. The difference is that instead of adjusting TDPs based on just APU temperatures, it adjusts clocks based on load, power limits, and temperatures. Turbo Boost Overdrive iGPU is the first to be released. TBO iGPU does what has been stated before, but as you can guess, the iGPU clocks of supported APUs using an offset to calculate the max clock the APU's iGPU can run under load. This mode also solves the static nature of iGPU clocks when manually overclocking them. Thanks to the load-based adjustments to the clock speed, this flaw is worked around. As a result, this allows the APU to find the best clock speed for that moment in time, saving on both power, reducing temperatures and saving battery life when the highest clocks are not needed while aiming to keep peak performance.
 
 ## Benefits of using AATU
 Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
