@@ -244,7 +244,7 @@ namespace AMD_APU_Tuning_Utility
             btnSave.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
         }
 
-        private void cbCPUTurbo_CheckedChanged(object sender, EventArgs e)
+        private async void cbCPUTurbo_CheckedChanged(object sender, EventArgs e)
         {
             int MaxCPUPerf = 100;
             int boostMode = 1;
@@ -269,25 +269,55 @@ namespace AMD_APU_Tuning_Utility
                 CPUTurbo = false;
             }
 
-            startInfo.FileName = "powercfg";
-            startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PERFBOOSTMODE " + boostMode;
-            process.StartInfo = startInfo;
-            process.Start();
-            System.Threading.Thread.Sleep(50);
+            await Task.Run(() =>
+            {
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PERFBOOSTMODE " + boostMode;
+                process.StartInfo = startInfo;
+                process.Start();
+                System.Threading.Thread.Sleep(300);
 
-            startInfo.FileName = "powercfg";
-            startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX " + MaxCPUPerf;
-            process.StartInfo = startInfo;
-            process.Start();
-            System.Threading.Thread.Sleep(50);
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "/setactive scheme_current";
+                process.StartInfo = startInfo;
+                process.Start();
 
-            startInfo.FileName = "powercfg";
-            startInfo.Arguments = "/setactive scheme_current";
-            process.StartInfo = startInfo;
-            process.Start();
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX " + MaxCPUPerf;
+                process.StartInfo = startInfo;
+                process.Start();
+                System.Threading.Thread.Sleep(300);
 
-            Settings.Default["CPUTurbo"] = CPUTurbo;
-            Settings.Default.Save();
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "/setactive scheme_current";
+                process.StartInfo = startInfo;
+                process.Start();
+
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "-setdcvalueindex scheme_current sub_processor PERFBOOSTMODE " + boostMode;
+                process.StartInfo = startInfo;
+                process.Start();
+                System.Threading.Thread.Sleep(300);
+
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "/setactive scheme_current";
+                process.StartInfo = startInfo;
+                process.Start();
+
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "-setdcvalueindex scheme_current sub_processor PROCTHROTTLEMAX " + MaxCPUPerf;
+                process.StartInfo = startInfo;
+                process.Start();
+                System.Threading.Thread.Sleep(300);
+
+                startInfo.FileName = "powercfg";
+                startInfo.Arguments = "/setactive scheme_current";
+                process.StartInfo = startInfo;
+                process.Start();
+
+                Settings.Default["CPUTurbo"] = CPUTurbo;
+                Settings.Default.Save();
+            });
         }
 
         private void cbSkinTemp_CheckedChanged(object sender, EventArgs e)

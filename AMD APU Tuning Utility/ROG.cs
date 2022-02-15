@@ -39,6 +39,7 @@ namespace AMD_APU_Tuning_Utility
 
         string path = (string)Settings.Default["Path"];
         string path2 = (string)Settings.Default["Path"];
+        string path3 = (string)Settings.Default["Path"];
         string args = (string)Settings.Default["Args"];
         string director = (string)Settings.Default["Path"];
         string imageName;
@@ -48,7 +49,7 @@ namespace AMD_APU_Tuning_Utility
             this.updateTheme();
             path = path + "//bin//atrofac-cli.exe";
             path2 = path2 + "//bin//Notification.exe";
-
+            path3 = path3 + "//bin//oc.exe";
 
             if (args == "" || args == null)
             {
@@ -93,7 +94,8 @@ namespace AMD_APU_Tuning_Utility
             nudGPU7.Value = (int)Settings.Default["GPU7"];
             nudGPU8.Value = (int)Settings.Default["GPU8"];
 
-
+            nudCore.Value = (int)Settings.Default["coreClock"];
+            nudMem.Value = (int)Settings.Default["memClock"];
         }
 
         private void updateTheme()
@@ -179,6 +181,25 @@ namespace AMD_APU_Tuning_Utility
                 startInfo.Arguments = args;
                 process.StartInfo = startInfo;
                 process.Start();
+
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = path3;
+                startInfo.Arguments = "0 " + nudCore.Value + " " + nudMem.Value;
+                process.StartInfo = startInfo;
+                process.Start();
+
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = path3;
+                startInfo.Arguments = "1 " + nudCore.Value + " " + nudMem.Value;
+                process.StartInfo = startInfo;
+                process.Start();
+
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = path3;
+                startInfo.Arguments = "2 " + nudCore.Value + " " + nudMem.Value;
+                process.StartInfo = startInfo;
+                process.Start();
+
 
                 Settings.Default["Args"] = args;
                 Settings.Default.Save();
@@ -312,6 +333,9 @@ namespace AMD_APU_Tuning_Utility
             Settings.Default["GPU7"] = (int)nudGPU7.Value;
             Settings.Default["GPU8"] = (int)nudGPU8.Value;
 
+            Settings.Default["coreClock"] = (int)nudCore.Value;
+            Settings.Default["memClock"] = (int)nudMem.Value;
+
             Settings.Default.Save();
 
             args = "fan --plan windows --cpu 30c:"+ CPU[1] + "%,40c:"+ CPU[2] + "%,50c:"+ CPU[3] + "%,60c:"+ CPU[4] + "%,70c:"+ CPU[5] + "%,80c:"+ CPU[6] + "%,90c:"+ CPU[7] + "%,100c:"+ CPU[8] + "% --gpu 30c:"+ GPU[1] + "%,40c:"+ GPU[2] + "%,50c:"+ GPU[3] + "%,60c:"+ GPU[4] + "%,70c:"+ GPU[5] + "%,80c:"+ GPU[6] + "%,90c:"+ GPU[7] + "%,100c:"+ GPU[8] + "%";
@@ -322,6 +346,53 @@ namespace AMD_APU_Tuning_Utility
         {
             Image image = Image.FromFile(director + "\\images\\" + imageName + ".png");
             pbModes.Image = new Bitmap(image);
+        }
+
+        private void tbCore_Scroll(object sender, EventArgs e)
+        {
+            nudCore.Value = tbCore.Value;
+        }
+
+        private void tbMem_Scroll(object sender, EventArgs e)
+        {
+            nudMem.Value = tbMem.Value;
+        }
+
+        private void nudCore_ValueChanged(object sender, EventArgs e)
+        {
+            tbCore.Value = (int)nudCore.Value;
+        }
+
+        private void nudMem_ValueChanged(object sender, EventArgs e)
+        {
+            tbMem.Value = (int)nudMem.Value;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            bool useDefaultTheme = (bool)Settings.Default["useDefaultTheme"];
+            if (!useDefaultTheme)
+            {
+                topBar1 = (int)Settings.Default["topBar1"];
+                topBar2 = (int)Settings.Default["topBar2"];
+                topBar3 = (int)Settings.Default["topBar3"];
+
+                sideBar1 = (int)Settings.Default["sideBar1"];
+                sideBar2 = (int)Settings.Default["sideBar2"];
+                sideBar3 = (int)Settings.Default["sideBar3"];
+            }
+            else
+            {
+                topBar1 = 0;
+                topBar2 = 180;
+                topBar3 = 166;
+
+                sideBar1 = 0;
+                sideBar2 = 110;
+                sideBar3 = 106;
+            }
+
+            btnApply.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
         }
     }
 }

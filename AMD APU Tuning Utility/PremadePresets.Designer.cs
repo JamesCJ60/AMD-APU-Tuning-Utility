@@ -41,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Theme = new System.Windows.Forms.Timer(this.components);
-            this.AutoReapply = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +65,7 @@
             this.btnimport.Enabled = false;
             this.btnimport.FlatAppearance.BorderSize = 0;
             this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnimport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnimport.ForeColor = System.Drawing.Color.White;
             this.btnimport.Location = new System.Drawing.Point(490, 18);
             this.btnimport.Name = "btnimport";
@@ -83,7 +82,7 @@
             this.btnSensors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
             this.btnSensors.FlatAppearance.BorderSize = 0;
             this.btnSensors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSensors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSensors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSensors.ForeColor = System.Drawing.Color.White;
             this.btnSensors.Location = new System.Drawing.Point(331, 18);
             this.btnSensors.Name = "btnSensors";
@@ -100,7 +99,7 @@
             this.btnApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.White;
             this.btnApply.Location = new System.Drawing.Point(649, 18);
             this.btnApply.Name = "btnApply";
@@ -162,12 +161,12 @@
             this.cbAPUPreset.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbAPUPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAPUPreset.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbAPUPreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAPUPreset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAPUPreset.ForeColor = System.Drawing.Color.Black;
             this.cbAPUPreset.FormattingEnabled = true;
-            this.cbAPUPreset.Location = new System.Drawing.Point(259, 65);
+            this.cbAPUPreset.Location = new System.Drawing.Point(259, 63);
             this.cbAPUPreset.Name = "cbAPUPreset";
-            this.cbAPUPreset.Size = new System.Drawing.Size(219, 23);
+            this.cbAPUPreset.Size = new System.Drawing.Size(219, 24);
             this.cbAPUPreset.TabIndex = 4;
             this.cbAPUPreset.SelectedIndexChanged += new System.EventHandler(this.cbAPUPreset_SelectedIndexChanged);
             // 
@@ -178,7 +177,7 @@
             this.cbAPUSeries.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbAPUSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAPUSeries.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbAPUSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAPUSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAPUSeries.ForeColor = System.Drawing.Color.Black;
             this.cbAPUSeries.FormattingEnabled = true;
             this.cbAPUSeries.Items.AddRange(new object[] {
@@ -189,10 +188,11 @@
             "Ryzen 4000 Series H/HS",
             "Ryzen 5000 Series U",
             "Ryzen 5000 Series H/HS/HX",
-            "AYA Neo (4500U)"});
-            this.cbAPUSeries.Location = new System.Drawing.Point(259, 22);
+            "Ryzen 6000 Series U",
+            "Ryzen 6000 Series H/HS/HX"});
+            this.cbAPUSeries.Location = new System.Drawing.Point(259, 20);
             this.cbAPUSeries.Name = "cbAPUSeries";
-            this.cbAPUSeries.Size = new System.Drawing.Size(219, 23);
+            this.cbAPUSeries.Size = new System.Drawing.Size(219, 24);
             this.cbAPUSeries.TabIndex = 3;
             this.cbAPUSeries.SelectedIndexChanged += new System.EventHandler(this.cbAPUSeries_SelectedIndexChanged);
             // 
@@ -228,12 +228,6 @@
             this.Theme.Interval = 500;
             this.Theme.Tick += new System.EventHandler(this.Theme_Tick);
             // 
-            // AutoReapply
-            // 
-            this.AutoReapply.Enabled = true;
-            this.AutoReapply.Interval = 5000;
-            this.AutoReapply.Tick += new System.EventHandler(this.AutoReapply_Tick);
-            // 
             // PremadePresets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -265,7 +259,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSensors;
         private System.Windows.Forms.Timer Theme;
-        private System.Windows.Forms.Timer AutoReapply;
         private System.Windows.Forms.Button btnimport;
     }
 }

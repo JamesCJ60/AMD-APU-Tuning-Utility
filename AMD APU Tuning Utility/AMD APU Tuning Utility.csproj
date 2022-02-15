@@ -8,11 +8,14 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AMD_APU_Tuning_Utility</RootNamespace>
     <AssemblyName>AMD APU Tuning Utility</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -62,13 +65,14 @@
     <ManifestCertificateThumbprint>B58DCF6C66D5AA8FCA805334929A24A384FA9C9E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AMD APU Tuning Utility_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -83,7 +87,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
+    <OutputPath>bin\AATU\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -92,14 +96,27 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AMD_APU_Tuning_Utility.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DiscordRPC, Version=1.0.169.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DiscordRichPresence.1.0.169\lib\net35\DiscordRPC.dll</HintPath>
+    <Reference Include="DiscordRPC, Version=1.0.175.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiscordRichPresence.1.0.175\lib\net35\DiscordRPC.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="HidSharp, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HidSharp.2.1.0\lib\net35\HidSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenHardwareMonitorLib, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AATU\OpenHardwareMonitorLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
@@ -125,6 +142,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GPUOC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GPUOC.Designer.cs">
+      <DependentUpon>GPUOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +161,12 @@
       <DependentUpon>PremadePresets.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectE.Designer.cs">
+      <DependentUpon>ProjectE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ROG.cs">
       <SubType>UserControl</SubType>
@@ -163,6 +192,12 @@
     <Compile Include="SPM.Designer.cs">
       <DependentUpon>SPM.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartUp.Designer.cs">
+      <DependentUpon>StartUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="SysInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,11 +210,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GPUOC.resx">
+      <DependentUpon>GPUOC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeMenu.resx">
       <DependentUpon>HomeMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PremadePresets.resx">
       <DependentUpon>PremadePresets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectE.resx">
+      <DependentUpon>ProjectE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -202,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SPM.resx">
       <DependentUpon>SPM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUp.resx">
+      <DependentUpon>StartUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SysInfo.resx">
       <DependentUpon>SysInfo.cs</DependentUpon>

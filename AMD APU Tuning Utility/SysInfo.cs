@@ -30,61 +30,70 @@ namespace AMD_APU_Tuning_Utility
             InitializeComponent();
         }
 
-        public void CPUDetails()
+        public async void CPUDetails()
         {
-            ManagementObjectSearcher myProcessorObject = new ManagementObjectSearcher("select * from Win32_Processor");
-
-            foreach (ManagementObject obj in myProcessorObject.Get())
+            await Task.Run(() =>
             {
-                lblCPUInfo.Items.Add("Name  -  " + obj["Name"]);
-                lblCPUInfo.Items.Add("Manufacturer  -  " + obj["Manufacturer"]);
-                lblCPUInfo.Items.Add("Caption  -  " + obj["Caption"]);
-                lblCPUInfo.Items.Add("NumberOfCores  -  " + obj["NumberOfCores"]);
-                lblCPUInfo.Items.Add("NumberOfEnabledCore  -  " + obj["NumberOfEnabledCore"]);
-                lblCPUInfo.Items.Add("NumberOfLogicalProcessors  -  " + obj["NumberOfLogicalProcessors"]);             
-            }
+                ManagementObjectSearcher myProcessorObject = new ManagementObjectSearcher("select * from Win32_Processor");
+
+                foreach (ManagementObject obj in myProcessorObject.Get())
+                {
+                    lblCPUInfo.Items.Add("Name  -  " + obj["Name"]);
+                    lblCPUInfo.Items.Add("Manufacturer  -  " + obj["Manufacturer"]);
+                    lblCPUInfo.Items.Add("Caption  -  " + obj["Caption"]);
+                    lblCPUInfo.Items.Add("NumberOfCores  -  " + obj["NumberOfCores"]);
+                    lblCPUInfo.Items.Add("NumberOfEnabledCore  -  " + obj["NumberOfEnabledCore"]);
+                    lblCPUInfo.Items.Add("NumberOfLogicalProcessors  -  " + obj["NumberOfLogicalProcessors"]);
+                }
+            });
         }
 
-        public void GPUDetails()
+        public async void GPUDetails()
         {
-            ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
-            int i = 1;
-
-            foreach (ManagementObject obj in myVideoObject.Get())
+            await Task.Run(() =>
             {
-                if(i > 1)
+                ManagementObjectSearcher myVideoObject = new ManagementObjectSearcher("select * from Win32_VideoController");
+                int i = 1;
+
+                foreach (ManagementObject obj in myVideoObject.Get())
                 {
-                    lblGPUInfo.Items.Add("");
+                    if (i > 1)
+                    {
+                        lblGPUInfo.Items.Add("");
+                    }
+                    lblGPUInfo.Items.Add("GPU No.  -  " + i);
+                    lblGPUInfo.Items.Add("Name  -  " + obj["Name"]);
+                    lblGPUInfo.Items.Add("Status  -  " + obj["Status"]);
+                    lblGPUInfo.Items.Add("Caption  -  " + obj["Caption"]);
+                    lblGPUInfo.Items.Add("DriverVersion  -  " + obj["DriverVersion"]);
+                    lblGPUInfo.Items.Add("VideoProcessor  -  " + obj["VideoProcessor"]);
+                    i++;
                 }
-                lblGPUInfo.Items.Add("GPU No.  -  " + i);
-                lblGPUInfo.Items.Add("Name  -  " + obj["Name"]);
-                lblGPUInfo.Items.Add("Status  -  " + obj["Status"]);
-                lblGPUInfo.Items.Add("Caption  -  " + obj["Caption"]);
-                lblGPUInfo.Items.Add("DriverVersion  -  " + obj["DriverVersion"]);
-                lblGPUInfo.Items.Add("VideoProcessor  -  " + obj["VideoProcessor"]);
-                i++;
-            }
+            });
         }
 
-        public void StorageDetails()
+        public async void StorageDetails()
         {
-            DriveInfo[] allDrives = DriveInfo.GetDrives();
-
-            foreach (DriveInfo d in allDrives)
+            await Task.Run(() =>
             {
-                lblStorageInfo.Items.Add("Drive " +  d.Name);
-                if (d.IsReady == true)
+                DriveInfo[] allDrives = DriveInfo.GetDrives();
+
+                foreach (DriveInfo d in allDrives)
                 {
-                    lblStorageInfo.Items.Add("      Volume label: " + d.VolumeLabel);
-                    lblStorageInfo.Items.Add("      File system: " + d.DriveFormat);
-                    lblStorageInfo.Items.Add("      Available space to current user: " + d.AvailableFreeSpace / 1024 / 1024 / 1024  + " GB");
+                    lblStorageInfo.Items.Add("Drive " + d.Name);
+                    if (d.IsReady == true)
+                    {
+                        lblStorageInfo.Items.Add("      Volume label: " + d.VolumeLabel);
+                        lblStorageInfo.Items.Add("      File system: " + d.DriveFormat);
+                        lblStorageInfo.Items.Add("      Available space to current user: " + d.AvailableFreeSpace / 1024 / 1024 / 1024 + " GB");
 
-                    lblStorageInfo.Items.Add("      Total available space:           " + d.TotalFreeSpace / 1024 / 1024 / 1024 + " GB");
+                        lblStorageInfo.Items.Add("      Total available space:           " + d.TotalFreeSpace / 1024 / 1024 / 1024 + " GB");
 
-                    lblStorageInfo.Items.Add("      Total size of drive:             " +  d.TotalSize / 1024 /1024 /1024 + " GB");
-                    lblStorageInfo.Items.Add("");
+                        lblStorageInfo.Items.Add("      Total size of drive:             " + d.TotalSize / 1024 / 1024 / 1024 + " GB");
+                        lblStorageInfo.Items.Add("");
+                    }
                 }
-            }
+            });
         }
 
         private void SysInfo_Load(object sender, EventArgs e)

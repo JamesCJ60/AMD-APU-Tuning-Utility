@@ -16,10 +16,10 @@ using DiscordRPC;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Threading;
+using Button = DiscordRPC.Button;
 
 namespace AMD_APU_Tuning_Utility
 {
-
     public partial class Form1 : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -39,7 +39,7 @@ namespace AMD_APU_Tuning_Utility
 
         //Variables
         bool useDefaultTheme = (bool)Settings.Default["useDefaultTheme"];
-        
+
         int topBar1 = 0;
         int topBar2 = 180;
         int topBar3 = 166;
@@ -47,17 +47,21 @@ namespace AMD_APU_Tuning_Utility
         int sideBar1 = 0;
         int sideBar2 = 110;
         int sideBar3 = 106;
+        double i = 0;
 
         string CPUName = "";
         string series = "";
+        string path = (string)Settings.Default["Path"];
+        string path4;
+        string path5;
 
+        PrivateFontCollection pfc = new PrivateFontCollection();
 
         public DiscordRpcClient client;
         //MessageBox.Show(path);
 
         bool discord = (bool)Settings.Default["Discord"];
         bool tray = (bool)Settings.Default["Tray"];
-        bool firstBoot = (bool)Settings.Default["firstBoot"];
 
         public Form1()
         {
@@ -68,8 +72,17 @@ namespace AMD_APU_Tuning_Utility
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 14, 14));
+            
 
+            if (tray == true)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.Hide();
+                notifyIcon.Visible = true;
+            }
+            //panelMenu.Controls.SetChildIndex(btnSettings, 0); 
+           panelMenu.Controls.SetChildIndex(btnGPU, 5);
         }
 
 
@@ -82,25 +95,27 @@ namespace AMD_APU_Tuning_Utility
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if(firstBoot == true)
-            {
-                string path = Directory.GetCurrentDirectory();
-                Settings.Default["Path"] = path.ToString();
-                Settings.Default["firstBoot"] = false;
-                Settings.Default.Save();
-                //MessageBox.Show(path);
-            }
-
-            if(tray == true)
-            {
-                this.WindowState = FormWindowState.Minimized;
-            }
-
-            this.Run1();
+            this.Opacity = 0;
+            path = path + "\\eurofighter.ttf";
+            Settings.Default["aatuVersion"] = lblVersion.Text;
+            Settings.Default.Save();
             
+            pfc.AddFontFile(path);
+            label1.Font = new Font(pfc.Families[0], 13);
+            lblEd.Font = new Font(pfc.Families[0], 11);
+            /*
+                        if (!Directory.Exists((string)Settings.Default["Path"] + "//ps-config"))
+                        {
+                            btnPE.Visible = false;
+                        }
+                        else
+                        {
+                            btnPE.Visible = true;
+                        }*/
+
+
             this.findCPU();
             this.setDiscord();
-            Internet();
 
             //Form1.SetProcessDPIAware();
 
@@ -146,7 +161,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
             btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnPPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -167,7 +184,7 @@ namespace AMD_APU_Tuning_Utility
             HomeMenu.Instance.Dock = DockStyle.Fill;
 
             bool ac = (bool)Settings.Default["AC"];
-            if(ac == true)
+            if (ac == true)
             {
                 btnROG.Visible = true;
             }
@@ -175,6 +192,24 @@ namespace AMD_APU_Tuning_Utility
             {
                 btnROG.Visible = false;
             }
+
+            FormOpacity.Enabled = true;
+
+            string mbo = "";
+            ManagementObjectSearcher baseboardSearcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_BaseBoard");
+            foreach (ManagementObject queryObj in baseboardSearcher.Get())
+            {
+                mbo = queryObj["Manufacturer"].ToString();
+                mbo = mbo.ToLower();
+            }
+
+            if (mbo.Contains("aya") && this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+
+                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 0, 0));
+            }
+
         }
 
 
@@ -200,13 +235,13 @@ namespace AMD_APU_Tuning_Utility
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
-              
-                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+
+                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 14, 14));
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized; ;
-                
+
                 Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 0, 0));
             }
         }
@@ -243,7 +278,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnPPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -282,7 +319,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnPPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -321,7 +360,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -345,7 +386,7 @@ namespace AMD_APU_Tuning_Utility
         private void btnSmartB_Click(object sender, EventArgs e)
         {
             CheckColour();
-            lblTitle.Text = "Smart Battery Mode";
+            lblTitle.Text = "Adaptive ECO";
 
             btnSmartB.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
             btnSmartB.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
@@ -359,7 +400,9 @@ namespace AMD_APU_Tuning_Utility
             btnPPresets.BackColor = Color.FromArgb(51, 51, 76);
             btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -384,7 +427,7 @@ namespace AMD_APU_Tuning_Utility
         private void btnSmartP_Click(object sender, EventArgs e)
         {
             CheckColour();
-            lblTitle.Text = "Smart Boost Mode";
+            lblTitle.Text = "Adaptive Performance";
 
             btnSmartP.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
             btnSmartP.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
@@ -399,7 +442,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -438,7 +483,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
             btnSettings.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSmartP.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -476,7 +523,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -512,7 +561,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnSettings.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -560,6 +611,21 @@ namespace AMD_APU_Tuning_Utility
 
         private void ThemeMain_Tick(object sender, EventArgs e)
         {
+            /*
+            try
+            {
+                Ping myPing = new Ping();
+                String host = "chipsandcheese.com";
+                byte[] buffer = new byte[512];
+                int timeout = 100;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+            }
+            catch (Exception)
+            {
+                Application.Exit();
+            }
+            */
             MinimizeFootprint();
             Thread.Sleep(1);
 
@@ -631,6 +697,13 @@ namespace AMD_APU_Tuning_Utility
                 panelTitleBar.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
                 panelLogo.BackColor = Color.FromArgb(sideBar1, sideBar2, sideBar3);
             }
+            else if (lblTitle.Text == "GPU Overclocking")
+            {
+                btnGPU.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
+
+                panelTitleBar.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
+                panelLogo.BackColor = Color.FromArgb(sideBar1, sideBar2, sideBar3);
+            }
 
             bool ac = (bool)Settings.Default["AC"];
             if (ac == true)
@@ -653,7 +726,8 @@ namespace AMD_APU_Tuning_Utility
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            if(tray == true) { 
+            if (tray == true)
+            {
                 if (this.WindowState == FormWindowState.Minimized)
                 {
                     Hide();
@@ -662,19 +736,7 @@ namespace AMD_APU_Tuning_Utility
             }
         }
 
-        private void Run1()
-        {
-            if (!Program.IsAdministrator())
-            {
-                // Restart and run as admin
-                var exeName = Process.GetCurrentProcess().MainModule.FileName;
-                ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
-                startInfo.Verb = "runas";
-                startInfo.Arguments = "restart";
-                Process.Start(startInfo);
-                Application.Exit();
-            }
-        }
+        
 
         private void findCPU()
         {
@@ -704,7 +766,7 @@ namespace AMD_APU_Tuning_Utility
                 series = "5000";
                 lblAPU.Text = "APU: Ryzen 7 5800HS (8 Cores 16 Threads @ 4.4GHz/2.8GHz)";
             }
-            else if (CPUName.Contains("4600HS"))
+            else if (CPUName.Contains("5600HS"))
             {
                 CPUName = "Ryzen 5 5600HS";
                 series = "5000";
@@ -783,7 +845,7 @@ namespace AMD_APU_Tuning_Utility
             {
                 CPUName = "Ryzen 7 5700U";
                 series = "5000";
-                lblAPU.Text = "APU: Ryzen 7 5700U (8 Cores 16 Threads @ 4.2GHz/1.8GHz)";
+                lblAPU.Text = "APU: Ryzen 7 5700U (8 Cores 16 Threads @ 4.3GHz/1.8GHz)";
             }
             else if (CPUName.Contains("5600U"))
             {
@@ -862,12 +924,73 @@ namespace AMD_APU_Tuning_Utility
                 CPUName = "Ryzen 3 2200U";
                 lblAPU.Text = "APU: Ryzen 3 2200U (2 Cores 4 Threads @ 3.4GHz/2.5GHz)";
             }
+            else if (CPUName.Contains("6900HS"))
+            {
+                CPUName = "Ryzen 9 6900HS";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 9 6900HS (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6980HS"))
+            {
+                CPUName = "Ryzen 9 6980HS";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 9 6980HS (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("5800HS"))
+            {
+                CPUName = "Ryzen 7 6800HS";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 7 6800HS (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6600HS"))
+            {
+                CPUName = "Ryzen 5 6600HS";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 5 6600HS (6 Cores 12 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6900HX"))
+            {
+                CPUName = "Ryzen 9 6900HX";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 9 6900HX (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6980HX"))
+            {
+                CPUName = "Ryzen 9 6980HX";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 9 6980HX (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6800H"))
+            {
+                CPUName = "Ryzen 7 6800H";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 7 6800H (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6600H"))
+            {
+                CPUName = "Ryzen 5 6600H";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 5 6600H (6 Cores 12 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6800U"))
+            {
+                CPUName = "Ryzen 7 6800U";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 7 6800U (8 Cores 16 Threads @ TBA/TBA)";
+            }
+            else if (CPUName.Contains("6600U"))
+            {
+                CPUName = "Ryzen 5 6600U";
+                series = "6000";
+                lblAPU.Text = "APU: Ryzen 5 6600U (6 Cores 12 Threads @ TBA/TBA)";
+            }
             else
             {
                 lblAPU.Text = "APU: " + CPUName;
             }
 
             Settings.Default["Series"] = series;
+            Settings.Default["APUName"] = CPUName;
             Settings.Default.Save();
         }
 
@@ -876,14 +999,20 @@ namespace AMD_APU_Tuning_Utility
             if (discord == true)
             {
                 client = new DiscordRpcClient("761946503006388224");
-                client.SetPresence(new DiscordRPC.RichPresence()
+                client.SetPresence(new RichPresence()
                 {
                     Details = "Version: " + lblVersion.Text,
                     State = $"{CPUName}",
+                    Buttons = new Button[]
+                    {
+                        new Button() { Label = "About AATU", Url = "https://amdaputuningutility.com/" },
+                        new Button() { Label = "Download AATU", Url = "https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/releases" }
+                    },
                     Assets = new Assets()
                     {
-                        LargeImageKey = "icon"
+                        LargeImageKey = "newicon"
                     }
+
                 });
                 client.Initialize();
             }
@@ -914,6 +1043,153 @@ namespace AMD_APU_Tuning_Utility
 
             Settings.Default["Internet"] = true;
             Settings.Default.Save();
+        }
+
+        public void trayMin()
+        {
+            if (tray == true)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.Hide();
+                notifyIcon.Visible = true;
+            }
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            if (tray == true)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.Hide();
+                notifyIcon.Visible = true;
+            }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormOpacity_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 0.98 && this.Opacity != 0.98)
+            {
+                this.Opacity = i;
+            }
+            else
+            {
+                this.Opacity = 0.98;
+                FormOpacity.Enabled = false;
+            }
+            i = i + 0.10;
+        }
+
+        private async void AutoReapply_Tick(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                if (!lblTitle.Text.Contains("Adaptive"))
+                {
+                    string RyzenADJ = (string)Settings.Default["RyzenADJ"];
+                    path4 = (string)Settings.Default["Path"];
+                    path5 = (string)Settings.Default["Path"];
+                    path4 = path4 + "\\bin\\";
+
+                    path5 = path5 + "\\bin\\Notification.exe";
+
+                    bool auto = (bool)Settings.Default["AutoApply"];
+
+                    if (auto == true)
+                    {
+                        if (RyzenADJ == "" || RyzenADJ == null)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            var processInfo = new ProcessStartInfo("cmd.exe")
+                            {
+                                CreateNoWindow = true,
+                                WindowStyle = ProcessWindowStyle.Hidden,
+                                UseShellExecute = false,
+                                RedirectStandardError = true,
+                                RedirectStandardOutput = true,
+                                Arguments = "/C ryzenadj.exe " + RyzenADJ,
+                                WorkingDirectory = @path4
+                            };
+                            Process p = Process.Start(processInfo);
+                        }
+                    }
+                }
+            });
+        }
+
+        private void btnGPU_Click(object sender, EventArgs e)
+        {
+            CheckColour();
+            lblTitle.Text = "GPU Overclocking";
+            btnGPU.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
+            btnGPU.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+            panelTitleBar.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
+            panelLogo.BackColor = Color.FromArgb(sideBar1, sideBar2, sideBar3);
+
+
+            btnHome.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPresets.BackColor = Color.FromArgb(51, 51, 76);
+            btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
+            btnPPresets.BackColor = Color.FromArgb(51, 51, 76);
+            btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
+            btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
+            btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnSettings.BackColor = Color.FromArgb(51, 51, 76);
+
+            btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSmartP.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnPPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSmartB.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnROG.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSettings.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+
+
+
+
+
+
+            panelControl.Controls.Clear();
+            panelControl.Controls.Add(GPUOC.Instance);
+            GPUOC.Instance.Dock = DockStyle.Fill;
+        }
+
+        private void btnPE_Click(object sender, EventArgs e)
+        {
+            CheckColour();
+            lblTitle.Text = "Project Snowdrop";
+
+            btnHome.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPresets.BackColor = Color.FromArgb(51, 51, 76);
+            btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
+            btnPPresets.BackColor = Color.FromArgb(51, 51, 76);
+            btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
+            btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
+            btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnSettings.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSmartP.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnPPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSmartB.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnROG.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSettings.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+
+            panelControl.Controls.Clear();
+            panelControl.Controls.Add(ProjectE.Instance);
+            ProjectE.Instance.Dock = DockStyle.Fill;
         }
     }
 }

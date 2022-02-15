@@ -95,7 +95,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(671, 18);
             this.btnSave.Name = "btnSave";
@@ -153,25 +153,25 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label18
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.CausesValidation = false;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(429, 365);
+            this.label18.Location = new System.Drawing.Point(467, 365);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(337, 45);
+            this.label18.Size = new System.Drawing.Size(347, 45);
             this.label18.TabIndex = 86;
-            this.label18.Text = "Only works on Ryzen ROG laptops for example, the G14 and \r\nG15 from 2019 onwards." +
-    " You will need to reapply your preset\r\nsettings after selecting one of the AC po" +
-    "wer modes.";
+            this.label18.Text = "Only works on Ryzen ROG and TUF laptops for example, the \r\nG14 and G15 from 2019 " +
+    "onwards. You will need to reapply \r\nyour preset settings after selecting one of " +
+    "the AC power modes.";
             // 
             // cbROG
             // 
-            this.cbROG.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbROG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbROG.AutoSize = true;
             this.cbROG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbROG.Location = new System.Drawing.Point(432, 342);
+            this.cbROG.Location = new System.Drawing.Point(470, 342);
             this.cbROG.Name = "cbROG";
             this.cbROG.Size = new System.Drawing.Size(228, 24);
             this.cbROG.TabIndex = 85;
@@ -181,11 +181,11 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label17
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.CausesValidation = false;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(429, 309);
+            this.label17.Location = new System.Drawing.Point(467, 309);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(327, 30);
@@ -195,10 +195,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbSkinTemp
             // 
-            this.cbSkinTemp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbSkinTemp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSkinTemp.AutoSize = true;
             this.cbSkinTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbSkinTemp.Location = new System.Drawing.Point(432, 287);
+            this.cbSkinTemp.Location = new System.Drawing.Point(470, 287);
             this.cbSkinTemp.Name = "cbSkinTemp";
             this.cbSkinTemp.Size = new System.Drawing.Size(361, 24);
             this.cbSkinTemp.TabIndex = 83;
@@ -208,24 +208,24 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label16
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.CausesValidation = false;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(429, 239);
+            this.label16.Location = new System.Drawing.Point(467, 239);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(326, 45);
             this.label16.TabIndex = 82;
             this.label16.Text = "Will disable CPU Turbo Boost  which is helpful for the iGPU\r\nin U series APUs. No" +
-    "te if using the AYA Neo iGPU presets\r\nthis is already ineffect.";
+    "te if using the AYA Neo iGPU presets\r\nthis is already in effect.";
             // 
             // cbCPUTurbo
             // 
-            this.cbCPUTurbo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCPUTurbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCPUTurbo.AutoSize = true;
             this.cbCPUTurbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbCPUTurbo.Location = new System.Drawing.Point(432, 217);
+            this.cbCPUTurbo.Location = new System.Drawing.Point(470, 217);
             this.cbCPUTurbo.Name = "cbCPUTurbo";
             this.cbCPUTurbo.Size = new System.Drawing.Size(209, 24);
             this.cbCPUTurbo.TabIndex = 81;
@@ -235,24 +235,24 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.CausesValidation = false;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(429, 132);
+            this.label15.Location = new System.Drawing.Point(467, 132);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(306, 30);
+            this.label15.Size = new System.Drawing.Size(309, 30);
             this.label15.TabIndex = 80;
-            this.label15.Text = "Please make sure to keep the Premade/Custom Preset\r\nmenu open when using Auto Rea" +
-    "pply.";
+            this.label15.Text = "Please make sure to keep the Premade/Custom Preset/\r\nHome menu open when using Au" +
+    "to Reapply.";
             // 
             // cbApplyStart
             // 
-            this.cbApplyStart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbApplyStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbApplyStart.AutoSize = true;
             this.cbApplyStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbApplyStart.Location = new System.Drawing.Point(432, 167);
+            this.cbApplyStart.Location = new System.Drawing.Point(470, 167);
             this.cbApplyStart.Name = "cbApplyStart";
             this.cbApplyStart.Size = new System.Drawing.Size(128, 24);
             this.cbApplyStart.TabIndex = 79;
@@ -261,10 +261,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbBoot
             // 
-            this.cbBoot.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbBoot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBoot.AutoSize = true;
             this.cbBoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbBoot.Location = new System.Drawing.Point(432, 192);
+            this.cbBoot.Location = new System.Drawing.Point(470, 192);
             this.cbBoot.Name = "cbBoot";
             this.cbBoot.Size = new System.Drawing.Size(123, 24);
             this.cbBoot.TabIndex = 78;
@@ -273,10 +273,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbAuto
             // 
-            this.cbAuto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAuto.AutoSize = true;
             this.cbAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbAuto.Location = new System.Drawing.Point(432, 107);
+            this.cbAuto.Location = new System.Drawing.Point(470, 107);
             this.cbAuto.Name = "cbAuto";
             this.cbAuto.Size = new System.Drawing.Size(124, 24);
             this.cbAuto.TabIndex = 77;
@@ -285,10 +285,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbTray
             // 
-            this.cbTray.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbTray.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTray.AutoSize = true;
             this.cbTray.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbTray.Location = new System.Drawing.Point(432, 83);
+            this.cbTray.Location = new System.Drawing.Point(470, 83);
             this.cbTray.Name = "cbTray";
             this.cbTray.Size = new System.Drawing.Size(141, 24);
             this.cbTray.TabIndex = 76;
@@ -297,10 +297,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(429, 63);
+            this.label13.Location = new System.Drawing.Point(467, 63);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(293, 15);
@@ -309,11 +309,11 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label14
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(391, 6);
+            this.label14.Location = new System.Drawing.Point(441, 6);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(153, 24);
             this.label14.TabIndex = 74;
@@ -321,10 +321,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbDiscord
             // 
-            this.cbDiscord.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbDiscord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbDiscord.AutoSize = true;
             this.cbDiscord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbDiscord.Location = new System.Drawing.Point(432, 38);
+            this.cbDiscord.Location = new System.Drawing.Point(470, 38);
             this.cbDiscord.Name = "cbDiscord";
             this.cbDiscord.Size = new System.Drawing.Size(222, 24);
             this.cbDiscord.TabIndex = 73;
@@ -333,11 +333,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(116, 216);
+            this.label8.Location = new System.Drawing.Point(82, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 72;
@@ -345,11 +344,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label10
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(116, 190);
+            this.label10.Location = new System.Drawing.Point(82, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 71;
@@ -357,11 +355,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label11
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(116, 164);
+            this.label11.Location = new System.Drawing.Point(82, 164);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 20);
             this.label11.TabIndex = 70;
@@ -369,11 +366,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(68, 137);
+            this.label12.Location = new System.Drawing.Point(34, 137);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(120, 20);
             this.label12.TabIndex = 69;
@@ -381,11 +377,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(68, 36);
+            this.label5.Location = new System.Drawing.Point(34, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(153, 20);
             this.label5.TabIndex = 68;
@@ -393,23 +388,21 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 362);
+            this.label3.Location = new System.Drawing.Point(35, 362);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(348, 30);
+            this.label3.Size = new System.Drawing.Size(309, 30);
             this.label3.TabIndex = 67;
-            this.label3.Text = "Use this setting at your own risk. Does not work on 4000 series \r\nand up.";
+            this.label3.Text = "Use this setting at your own risk. Does not work on 4000\r\nseries and up.";
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(31, 305);
+            this.label2.Location = new System.Drawing.Point(9, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 24);
             this.label2.TabIndex = 66;
@@ -417,10 +410,9 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbGPUSettings
             // 
-            this.cbGPUSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbGPUSettings.AutoSize = true;
             this.cbGPUSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbGPUSettings.Location = new System.Drawing.Point(72, 337);
+            this.cbGPUSettings.Location = new System.Drawing.Point(38, 337);
             this.cbGPUSettings.Name = "cbGPUSettings";
             this.cbGPUSettings.Size = new System.Drawing.Size(234, 24);
             this.cbGPUSettings.TabIndex = 65;
@@ -429,10 +421,9 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 266);
+            this.label1.Location = new System.Drawing.Point(35, 266);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(322, 30);
@@ -442,10 +433,9 @@ namespace AMD_APU_Tuning_Utility
             // 
             // cbCustomTheme
             // 
-            this.cbCustomTheme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbCustomTheme.AutoSize = true;
             this.cbCustomTheme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbCustomTheme.Location = new System.Drawing.Point(72, 245);
+            this.cbCustomTheme.Location = new System.Drawing.Point(38, 245);
             this.cbCustomTheme.Name = "cbCustomTheme";
             this.cbCustomTheme.Size = new System.Drawing.Size(169, 24);
             this.cbCustomTheme.TabIndex = 63;
@@ -454,89 +444,88 @@ namespace AMD_APU_Tuning_Utility
             // 
             // nudSideGreen
             // 
-            this.nudSideGreen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudSideGreen.Location = new System.Drawing.Point(204, 217);
+            this.nudSideGreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSideGreen.Location = new System.Drawing.Point(170, 217);
             this.nudSideGreen.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudSideGreen.Name = "nudSideGreen";
-            this.nudSideGreen.Size = new System.Drawing.Size(120, 20);
+            this.nudSideGreen.Size = new System.Drawing.Size(120, 22);
             this.nudSideGreen.TabIndex = 20;
             // 
             // nudSideBlue
             // 
-            this.nudSideBlue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudSideBlue.Location = new System.Drawing.Point(204, 190);
+            this.nudSideBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSideBlue.Location = new System.Drawing.Point(170, 190);
             this.nudSideBlue.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudSideBlue.Name = "nudSideBlue";
-            this.nudSideBlue.Size = new System.Drawing.Size(120, 20);
+            this.nudSideBlue.Size = new System.Drawing.Size(120, 22);
             this.nudSideBlue.TabIndex = 19;
             // 
             // nudSideRed
             // 
-            this.nudSideRed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudSideRed.Location = new System.Drawing.Point(204, 164);
+            this.nudSideRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSideRed.Location = new System.Drawing.Point(170, 164);
             this.nudSideRed.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudSideRed.Name = "nudSideRed";
-            this.nudSideRed.Size = new System.Drawing.Size(120, 20);
+            this.nudSideRed.Size = new System.Drawing.Size(120, 22);
             this.nudSideRed.TabIndex = 18;
             // 
             // nudTopGreen
             // 
-            this.nudTopGreen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudTopGreen.Location = new System.Drawing.Point(204, 112);
+            this.nudTopGreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTopGreen.Location = new System.Drawing.Point(170, 112);
             this.nudTopGreen.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudTopGreen.Name = "nudTopGreen";
-            this.nudTopGreen.Size = new System.Drawing.Size(120, 20);
+            this.nudTopGreen.Size = new System.Drawing.Size(120, 22);
             this.nudTopGreen.TabIndex = 17;
             // 
             // nudTopBlue
             // 
-            this.nudTopBlue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudTopBlue.Location = new System.Drawing.Point(204, 86);
+            this.nudTopBlue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTopBlue.Location = new System.Drawing.Point(170, 86);
             this.nudTopBlue.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudTopBlue.Name = "nudTopBlue";
-            this.nudTopBlue.Size = new System.Drawing.Size(120, 20);
+            this.nudTopBlue.Size = new System.Drawing.Size(120, 22);
             this.nudTopBlue.TabIndex = 16;
             // 
             // nudTopRed
             // 
-            this.nudTopRed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nudTopRed.Location = new System.Drawing.Point(204, 60);
+            this.nudTopRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTopRed.Location = new System.Drawing.Point(170, 60);
             this.nudTopRed.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudTopRed.Name = "nudTopRed";
-            this.nudTopRed.Size = new System.Drawing.Size(120, 20);
+            this.nudTopRed.Size = new System.Drawing.Size(120, 22);
             this.nudTopRed.TabIndex = 15;
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(116, 109);
+            this.label9.Location = new System.Drawing.Point(82, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 10;
@@ -544,11 +533,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(116, 83);
+            this.label7.Location = new System.Drawing.Point(82, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 9;
@@ -556,11 +544,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(116, 57);
+            this.label6.Location = new System.Drawing.Point(82, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 8;
@@ -568,11 +555,10 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(31, 6);
+            this.label4.Location = new System.Drawing.Point(9, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 24);
             this.label4.TabIndex = 5;

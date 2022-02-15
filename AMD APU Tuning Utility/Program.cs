@@ -17,7 +17,7 @@ namespace AMD_APU_Tuning_Utility
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new StartUp());
         }
 
         public static bool IsAdministrator()

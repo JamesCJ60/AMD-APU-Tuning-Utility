@@ -541,23 +541,8 @@ namespace AMD_APU_Tuning_Utility
 
                 var lines = File.ReadAllLines(path3 + "\\" + cbPreset.Text + ".txt");
 
-                if (Convert.ToInt32(lines[0]) > 95)
-                {
-                    nudTemp.Value = 95;
-                }else
-                {
-                    nudTemp.Value = Convert.ToInt32(lines[0]);
-                }
-
-                if (Convert.ToInt32(lines[1]) > 95)
-                {
-                    nudSkin.Value = 95;
-                }
-                else
-                {
-                    nudSkin.Value = Convert.ToInt32(lines[1]);
-                }
-
+                nudTemp.Value = Convert.ToInt32(lines[0]);
+                nudSkin.Value = Convert.ToInt32(lines[1]);
                 nudTDP.Value = Convert.ToInt32(lines[2]);
                 nudLongTDP.Value = Convert.ToInt32(lines[3]);
                 nudLongBoostDuration.Value = Convert.ToInt32(lines[4]);

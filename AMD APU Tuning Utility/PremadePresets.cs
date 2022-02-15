@@ -181,11 +181,11 @@ namespace AMD_APU_Tuning_Utility
             else if (cbAPUSeries.Text == "Ryzen 5000 Series U")
             {
 
-                cbAPUPreset.Items.Add("5300U");
+                cbAPUPreset.Items.Add("5300U/5400U/5425U");
                 cbAPUPreset.Items.Add("5500U");
-                cbAPUPreset.Items.Add("5600U");
+                cbAPUPreset.Items.Add("5600U/5625U");
                 cbAPUPreset.Items.Add("5700U");
-                cbAPUPreset.Items.Add("5800U");
+                cbAPUPreset.Items.Add("5800U/5825U");
             }
             else if (cbAPUSeries.Text == "Ryzen 5000 Series H/HS/HX")
             {
@@ -198,6 +198,23 @@ namespace AMD_APU_Tuning_Utility
                 cbAPUPreset.Items.Add("5900HX");
                 cbAPUPreset.Items.Add("5980HX");
                 
+            }
+            else if (cbAPUSeries.Text == "Ryzen 6000 Series U")
+            {
+                cbAPUPreset.Items.Add("6600U");
+                cbAPUPreset.Items.Add("6800U");
+            }
+            else if (cbAPUSeries.Text == "Ryzen 6000 Series H/HS/HX")
+            {
+                cbAPUPreset.Items.Add("6600H");
+                cbAPUPreset.Items.Add("6800H");
+                cbAPUPreset.Items.Add("6600HS");
+                cbAPUPreset.Items.Add("6800HS");
+                cbAPUPreset.Items.Add("6900HS");
+                cbAPUPreset.Items.Add("6980HS");
+                cbAPUPreset.Items.Add("6900HX");
+                cbAPUPreset.Items.Add("6980HX");
+
             }
             else if (cbAPUSeries.Text == "AYA Neo (4500U)")
             {
@@ -290,7 +307,7 @@ namespace AMD_APU_Tuning_Utility
                 shortBoostTDP = 50;
                 VRM = 60;
             }
-            else if (cbAPUPreset.Text == "4300U" || cbAPUPreset.Text == "4500U" || cbAPUPreset.Text == "4600U" || cbAPUPreset.Text == "4700U" || cbAPUPreset.Text == "4800U" || cbAPUPreset.Text == "5300U" || cbAPUPreset.Text == "5500U" || cbAPUPreset.Text == "5600U" || cbAPUPreset.Text == "5700U" || cbAPUPreset.Text == "5800U")
+            else if (cbAPUPreset.Text == "4300U" || cbAPUPreset.Text == "4500U" || cbAPUPreset.Text == "4600U" || cbAPUPreset.Text == "4700U" || cbAPUPreset.Text == "4800U" || cbAPUPreset.Text == "5300U/5400U/5425U" || cbAPUPreset.Text == "5500U" || cbAPUPreset.Text == "5600U/5625U" || cbAPUPreset.Text == "5700U" || cbAPUPreset.Text == "5800U/5825U")
             {
                 tempLimit = 95;
                 CPUTDP = 25;
@@ -300,7 +317,27 @@ namespace AMD_APU_Tuning_Utility
                 shortBoostTDP = 30;
                 VRM = 85;
             }
-            else if (cbAPUPreset.Text == "4600H" || cbAPUPreset.Text == "5600H")
+            else if (cbAPUPreset.Text == "6600U")
+            {
+                tempLimit = 105;
+                CPUTDP = 28;
+                LongBoostDuration = 75;
+                longBoostTDP = 30;
+                shortBoostDuration = 10;
+                shortBoostTDP = 38;
+                VRM = 95;
+            }
+            else if ( cbAPUPreset.Text == "6800U")
+            {
+                tempLimit = 105;
+                CPUTDP = 30;
+                LongBoostDuration = 75;
+                longBoostTDP = 32;
+                shortBoostDuration = 10;
+                shortBoostTDP = 40;
+                VRM = 95;
+            }
+            else if (cbAPUPreset.Text == "4600H" || cbAPUPreset.Text == "5600H" || cbAPUPreset.Text == "6600H")
             {
                 tempLimit = 105;
                 CPUTDP = 55;
@@ -310,7 +347,7 @@ namespace AMD_APU_Tuning_Utility
                 shortBoostTDP = 66;
                 VRM = 95;
             }
-            else if (cbAPUPreset.Text == "4800H" || cbAPUPreset.Text == "4900H" || cbAPUPreset.Text == "5800H")
+            else if (cbAPUPreset.Text == "4800H" || cbAPUPreset.Text == "4900H" || cbAPUPreset.Text == "5800H" || cbAPUPreset.Text == "6800H")
             {
                 tempLimit = 105;
                 CPUTDP = 60;
@@ -320,7 +357,7 @@ namespace AMD_APU_Tuning_Utility
                 shortBoostTDP = 68;
                 VRM = 100;
             }
-            else if (cbAPUPreset.Text == "5900HX" || cbAPUPreset.Text == "5980HX")
+            else if (cbAPUPreset.Text == "5900HX" || cbAPUPreset.Text == "5980HX" || cbAPUPreset.Text == "6900HX" || cbAPUPreset.Text == "6980HX")
             {
                 tempLimit = 105;
                 CPUTDP = 72;
@@ -483,9 +520,9 @@ namespace AMD_APU_Tuning_Utility
 
 
 
-            if(tempLimit > 95)
+            if(tempLimit > 100)
             {
-                tempLimit = 95;
+                tempLimit = 100;
             }
 
             lbPresetValues.Items.Clear();
@@ -553,7 +590,8 @@ namespace AMD_APU_Tuning_Utility
                     Settings.Default.Save();
                 }
                 
-                catch {
+                catch (Exception) 
+                {
                     if (connection == true)
                     {
                         System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -610,30 +648,6 @@ namespace AMD_APU_Tuning_Utility
                 process.StartInfo = startInfo;
                 process.Start();
 
-            }
-        }
-
-        private void AutoReapply_Tick(object sender, EventArgs e)
-        {
-            bool auto = (bool)Settings.Default["AutoApply"];
-
-            if (auto == true)
-            {
-                if (RyzenADJ == "" || RyzenADJ == null)
-                {
-                    return;
-                }
-                else
-                {
-                    System.Diagnostics.Process process = new System.Diagnostics.Process();
-                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                    startInfo.FileName = path;
-                    startInfo.Arguments = RyzenADJ;
-                    process.StartInfo = startInfo;
-                    process.Start();
-
-                }
             }
         }
 

@@ -120,16 +120,4 @@
   <metadata name="Theme.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="APMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 17</value>
-  </metadata>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Warning: Overclocking can cause stability issues or even damage  to hardware that we are not 
-liable for. Overclocking also only works with unlocked APUs that are 4000 sereis based and newer
-
-TBO CPU as of now only works in multi core workloads. TBO CPU will be updated to support single 
-core in the future.
-
-Please use official AMD graphics drivers instead of OEM specific, so sensors are accessible.</value>
-  </data>
 </root>

@@ -33,11 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnDiscord = new System.Windows.Forms.Button();
-            this.btnReleases = new System.Windows.Forms.Button();
             this.btnGitHub = new System.Windows.Forms.Button();
             this.btnReddit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.Theme = new System.Windows.Forms.Timer(this.components);
+            this.applyOnStart = new System.Windows.Forms.Timer(this.components);
+            this.btnPatreon = new System.Windows.Forms.Button();
+            this.btnReleases = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,28 +91,6 @@
             this.btnDiscord.UseVisualStyleBackColor = false;
             this.btnDiscord.Click += new System.EventHandler(this.btnDiscord_Click);
             // 
-            // btnReleases
-            // 
-            this.btnReleases.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReleases.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
-            this.btnReleases.FlatAppearance.BorderSize = 0;
-            this.btnReleases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReleases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReleases.ForeColor = System.Drawing.Color.White;
-            this.btnReleases.Image = ((System.Drawing.Image)(resources.GetObject("btnReleases.Image")));
-            this.btnReleases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReleases.Location = new System.Drawing.Point(189, 366);
-            this.btnReleases.Margin = new System.Windows.Forms.Padding(6);
-            this.btnReleases.Name = "btnReleases";
-            this.btnReleases.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnReleases.Size = new System.Drawing.Size(224, 64);
-            this.btnReleases.TabIndex = 3;
-            this.btnReleases.Text = "     Latest Releases";
-            this.btnReleases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReleases.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReleases.UseVisualStyleBackColor = false;
-            this.btnReleases.Click += new System.EventHandler(this.btnReleases_Click);
-            // 
             // btnGitHub
             // 
             this.btnGitHub.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -120,7 +101,7 @@
             this.btnGitHub.ForeColor = System.Drawing.Color.White;
             this.btnGitHub.Image = ((System.Drawing.Image)(resources.GetObject("btnGitHub.Image")));
             this.btnGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGitHub.Location = new System.Drawing.Point(425, 366);
+            this.btnGitHub.Location = new System.Drawing.Point(306, 366);
             this.btnGitHub.Margin = new System.Windows.Forms.Padding(6);
             this.btnGitHub.Name = "btnGitHub";
             this.btnGitHub.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
@@ -182,16 +163,80 @@
             this.Theme.Interval = 500;
             this.Theme.Tick += new System.EventHandler(this.Theme_Tick);
             // 
+            // applyOnStart
+            // 
+            this.applyOnStart.Enabled = true;
+            this.applyOnStart.Interval = 5000;
+            this.applyOnStart.Tick += new System.EventHandler(this.applyOnStart_Tick);
+            // 
+            // btnPatreon
+            // 
+            this.btnPatreon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPatreon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
+            this.btnPatreon.FlatAppearance.BorderSize = 0;
+            this.btnPatreon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPatreon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnPatreon.ForeColor = System.Drawing.Color.White;
+            this.btnPatreon.Image = ((System.Drawing.Image)(resources.GetObject("btnPatreon.Image")));
+            this.btnPatreon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPatreon.Location = new System.Drawing.Point(542, 365);
+            this.btnPatreon.Margin = new System.Windows.Forms.Padding(6);
+            this.btnPatreon.Name = "btnPatreon";
+            this.btnPatreon.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnPatreon.Size = new System.Drawing.Size(224, 64);
+            this.btnPatreon.TabIndex = 7;
+            this.btnPatreon.Text = "     Support Us";
+            this.btnPatreon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPatreon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPatreon.UseVisualStyleBackColor = false;
+            this.btnPatreon.Click += new System.EventHandler(this.btnPatreon_Click);
+            // 
+            // btnReleases
+            // 
+            this.btnReleases.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReleases.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
+            this.btnReleases.FlatAppearance.BorderSize = 0;
+            this.btnReleases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReleases.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReleases.ForeColor = System.Drawing.Color.White;
+            this.btnReleases.Image = ((System.Drawing.Image)(resources.GetObject("btnReleases.Image")));
+            this.btnReleases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReleases.Location = new System.Drawing.Point(70, 366);
+            this.btnReleases.Margin = new System.Windows.Forms.Padding(6);
+            this.btnReleases.Name = "btnReleases";
+            this.btnReleases.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnReleases.Size = new System.Drawing.Size(224, 64);
+            this.btnReleases.TabIndex = 8;
+            this.btnReleases.Text = "     Latest Releases";
+            this.btnReleases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReleases.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReleases.UseVisualStyleBackColor = false;
+            this.btnReleases.Click += new System.EventHandler(this.btnReleases_Click_1);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.ForeColor = System.Drawing.Color.DimGray;
+            this.lblVersion.Location = new System.Drawing.Point(10, 451);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(156, 16);
+            this.lblVersion.TabIndex = 9;
+            this.lblVersion.Text = "Application Version: 1.0.6";
+            // 
             // HomeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lblVersion);
+            this.Controls.Add(this.btnReleases);
+            this.Controls.Add(this.btnPatreon);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnReddit);
             this.Controls.Add(this.btnGitHub);
-            this.Controls.Add(this.btnReleases);
             this.Controls.Add(this.btnDiscord);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label1);
@@ -209,10 +254,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnDiscord;
-        private System.Windows.Forms.Button btnReleases;
         private System.Windows.Forms.Button btnGitHub;
         private System.Windows.Forms.Button btnReddit;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Timer Theme;
+        private System.Windows.Forms.Button btnPatreon;
+        public System.Windows.Forms.Timer applyOnStart;
+        private System.Windows.Forms.Button btnReleases;
+        private System.Windows.Forms.Label lblVersion;
     }
 }

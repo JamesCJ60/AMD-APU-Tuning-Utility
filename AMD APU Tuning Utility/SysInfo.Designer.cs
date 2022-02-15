@@ -41,7 +41,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
@@ -54,7 +54,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
@@ -67,7 +67,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
@@ -80,7 +80,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             // lblCPUInfo
             // 
-            this.lblCPUInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCPUInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCPUInfo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblCPUInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblCPUInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,7 +95,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             // lblGPUInfo
             // 
-            this.lblGPUInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGPUInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGPUInfo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblGPUInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblGPUInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -110,7 +110,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             // lblStorageInfo
             // 
-            this.lblStorageInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStorageInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStorageInfo.BackColor = System.Drawing.Color.Gainsboro;
             this.lblStorageInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblStorageInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

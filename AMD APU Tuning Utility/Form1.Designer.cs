@@ -1,4 +1,6 @@
-﻿namespace AMD_APU_Tuning_Utility
+﻿using System.Windows.Forms;
+
+namespace AMD_APU_Tuning_Utility
 {
     partial class Form1
     {
@@ -31,6 +33,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnGPU = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnROG = new System.Windows.Forms.Button();
             this.btnSystemInfo = new System.Windows.Forms.Button();
@@ -40,11 +43,12 @@
             this.btnPPresets = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblVersion = new System.Windows.Forms.Label();
+            this.lblEd = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnPE = new System.Windows.Forms.Button();
             this.lblAPU = new System.Windows.Forms.Label();
             this.btnMinimise = new System.Windows.Forms.Button();
             this.btnMaximise = new System.Windows.Forms.Button();
@@ -54,6 +58,8 @@
             this.panelControl = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.FormOpacity = new System.Windows.Forms.Timer(this.components);
+            this.AutoReapply = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,6 +71,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnGPU);
             this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnROG);
             this.panelMenu.Controls.Add(this.btnSystemInfo);
@@ -78,8 +85,29 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(275, 594);
+            this.panelMenu.Size = new System.Drawing.Size(258, 626);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnGPU
+            // 
+            this.btnGPU.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGPU.FlatAppearance.BorderSize = 0;
+            this.btnGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGPU.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnGPU.Image = ((System.Drawing.Image)(resources.GetObject("btnGPU.Image")));
+            this.btnGPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGPU.Location = new System.Drawing.Point(0, 565);
+            this.btnGPU.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnGPU.Name = "btnGPU";
+            this.btnGPU.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnGPU.Size = new System.Drawing.Size(258, 60);
+            this.btnGPU.TabIndex = 11;
+            this.btnGPU.Text = "     GPU Overclocking";
+            this.btnGPU.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGPU.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGPU.UseVisualStyleBackColor = true;
+            this.btnGPU.Click += new System.EventHandler(this.btnGPU_Click);
             // 
             // btnSettings
             // 
@@ -94,7 +122,7 @@
             this.btnSettings.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(275, 60);
+            this.btnSettings.Size = new System.Drawing.Size(258, 60);
             this.btnSettings.TabIndex = 10;
             this.btnSettings.Text = "     Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,8 +143,8 @@
             this.btnROG.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnROG.Name = "btnROG";
             this.btnROG.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnROG.Size = new System.Drawing.Size(275, 60);
-            this.btnROG.TabIndex = 9;
+            this.btnROG.Size = new System.Drawing.Size(258, 60);
+            this.btnROG.TabIndex = 10;
             this.btnROG.Text = "     ROG AC Modes";
             this.btnROG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnROG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,7 +164,7 @@
             this.btnSystemInfo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSystemInfo.Name = "btnSystemInfo";
             this.btnSystemInfo.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSystemInfo.Size = new System.Drawing.Size(275, 60);
+            this.btnSystemInfo.Size = new System.Drawing.Size(258, 60);
             this.btnSystemInfo.TabIndex = 6;
             this.btnSystemInfo.Text = "     System Info";
             this.btnSystemInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,9 +185,9 @@
             this.btnSmartP.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSmartP.Name = "btnSmartP";
             this.btnSmartP.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSmartP.Size = new System.Drawing.Size(275, 60);
+            this.btnSmartP.Size = new System.Drawing.Size(258, 60);
             this.btnSmartP.TabIndex = 5;
-            this.btnSmartP.Text = "     Smart Boost Mode";
+            this.btnSmartP.Text = "     Adaptive Performance";
             this.btnSmartP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSmartP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSmartP.UseVisualStyleBackColor = true;
@@ -178,9 +206,9 @@
             this.btnSmartB.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSmartB.Name = "btnSmartB";
             this.btnSmartB.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSmartB.Size = new System.Drawing.Size(275, 60);
+            this.btnSmartB.Size = new System.Drawing.Size(258, 60);
             this.btnSmartB.TabIndex = 4;
-            this.btnSmartB.Text = "     Smart Battery Mode";
+            this.btnSmartB.Text = "     Adaptive ECO";
             this.btnSmartB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSmartB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSmartB.UseVisualStyleBackColor = true;
@@ -199,7 +227,7 @@
             this.btnCPresets.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCPresets.Name = "btnCPresets";
             this.btnCPresets.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnCPresets.Size = new System.Drawing.Size(275, 60);
+            this.btnCPresets.Size = new System.Drawing.Size(258, 60);
             this.btnCPresets.TabIndex = 3;
             this.btnCPresets.Text = "     Custom Presets";
             this.btnCPresets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,7 +249,7 @@
             this.btnPPresets.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPPresets.Name = "btnPPresets";
             this.btnPPresets.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnPPresets.Size = new System.Drawing.Size(275, 60);
+            this.btnPPresets.Size = new System.Drawing.Size(258, 60);
             this.btnPPresets.TabIndex = 2;
             this.btnPPresets.Text = "     Pre-Made Presets";
             this.btnPPresets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,7 +271,7 @@
             this.btnHome.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(275, 60);
+            this.btnHome.Size = new System.Drawing.Size(258, 60);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "     Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -254,46 +282,30 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(110)))), ((int)(((byte)(106)))));
-            this.panelLogo.Controls.Add(this.label2);
-            this.panelLogo.Controls.Add(this.lblVersion);
+            this.panelLogo.Controls.Add(this.lblEd);
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(275, 85);
+            this.panelLogo.Size = new System.Drawing.Size(258, 85);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
-            // label2
+            // lblEd
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(147, 61);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "V";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.AutoSize = true;
-            this.lblVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblVersion.Location = new System.Drawing.Point(161, 61);
-            this.lblVersion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(35, 16);
-            this.lblVersion.TabIndex = 2;
-            this.lblVersion.Text = "2.0.3";
-            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblVersion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
+            this.lblEd.AutoSize = true;
+            this.lblEd.BackColor = System.Drawing.Color.Transparent;
+            this.lblEd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lblEd.ForeColor = System.Drawing.Color.White;
+            this.lblEd.Location = new System.Drawing.Point(119, 57);
+            this.lblEd.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblEd.Name = "lblEd";
+            this.lblEd.Size = new System.Drawing.Size(85, 24);
+            this.lblEd.TabIndex = 2;
+            this.lblEd.Text = "Standard";
+            this.lblEd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -301,12 +313,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(114, 9);
+            this.label1.Location = new System.Drawing.Point(80, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 48);
             this.label1.TabIndex = 1;
-            this.label1.Text = "AMD APU\r\nTuning Utility";
+            this.label1.Text = "AMD APU\r\nTuning Utility\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -314,7 +326,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 85);
@@ -323,21 +335,59 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblVersion.Location = new System.Drawing.Point(781, 52);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(86, 16);
+            this.lblVersion.TabIndex = 2;
+            this.lblVersion.Text = "2.0.5.4 Stable";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVersion.Visible = false;
+            this.lblVersion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
+            // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(166)))));
+            this.panelTitleBar.Controls.Add(this.btnPE);
+            this.panelTitleBar.Controls.Add(this.lblVersion);
             this.panelTitleBar.Controls.Add(this.lblAPU);
             this.panelTitleBar.Controls.Add(this.btnMinimise);
             this.panelTitleBar.Controls.Add(this.btnMaximise);
             this.panelTitleBar.Controls.Add(this.btnClose);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(275, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(258, 0);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(850, 85);
+            this.panelTitleBar.Size = new System.Drawing.Size(887, 85);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // btnPE
+            // 
+            this.btnPE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPE.BackColor = System.Drawing.Color.Transparent;
+            this.btnPE.FlatAppearance.BorderSize = 0;
+            this.btnPE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnPE.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnPE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPE.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPE.ForeColor = System.Drawing.Color.White;
+            this.btnPE.Location = new System.Drawing.Point(619, 0);
+            this.btnPE.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnPE.Name = "btnPE";
+            this.btnPE.Size = new System.Drawing.Size(151, 34);
+            this.btnPE.TabIndex = 7;
+            this.btnPE.Text = "Project Snowdrop";
+            this.btnPE.UseVisualStyleBackColor = false;
+            this.btnPE.Visible = false;
+            this.btnPE.Click += new System.EventHandler(this.btnPE_Click);
             // 
             // lblAPU
             // 
@@ -348,7 +398,7 @@
             this.lblAPU.Location = new System.Drawing.Point(5, 61);
             this.lblAPU.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAPU.Name = "lblAPU";
-            this.lblAPU.Size = new System.Drawing.Size(102, 16);
+            this.lblAPU.Size = new System.Drawing.Size(101, 16);
             this.lblAPU.TabIndex = 5;
             this.lblAPU.Text = "APU: (unknown)";
             this.lblAPU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -362,7 +412,7 @@
             this.btnMinimise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimise.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimise.ForeColor = System.Drawing.Color.White;
-            this.btnMinimise.Location = new System.Drawing.Point(743, 0);
+            this.btnMinimise.Location = new System.Drawing.Point(780, 0);
             this.btnMinimise.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnMinimise.Name = "btnMinimise";
             this.btnMinimise.Size = new System.Drawing.Size(35, 34);
@@ -379,7 +429,7 @@
             this.btnMaximise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximise.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximise.ForeColor = System.Drawing.Color.White;
-            this.btnMaximise.Location = new System.Drawing.Point(777, 0);
+            this.btnMaximise.Location = new System.Drawing.Point(814, 0);
             this.btnMaximise.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnMaximise.Name = "btnMaximise";
             this.btnMaximise.Size = new System.Drawing.Size(35, 34);
@@ -396,7 +446,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(814, 0);
+            this.btnClose.Location = new System.Drawing.Point(851, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 34);
@@ -411,7 +461,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(245, 21);
+            this.lblTitle.Location = new System.Drawing.Point(263, 21);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(348, 47);
@@ -432,17 +482,17 @@
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(850, 509);
+            this.panelControl.Size = new System.Drawing.Size(887, 541);
             this.panelControl.TabIndex = 0;
             // 
             // panelContainer
             // 
             this.panelContainer.Controls.Add(this.panelControl);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(275, 85);
+            this.panelContainer.Location = new System.Drawing.Point(258, 85);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(850, 509);
+            this.panelContainer.Size = new System.Drawing.Size(887, 541);
             this.panelContainer.TabIndex = 2;
             // 
             // notifyIcon
@@ -452,13 +502,24 @@
             this.notifyIcon.Text = "AATU";
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
+            // FormOpacity
+            // 
+            this.FormOpacity.Interval = 25;
+            this.FormOpacity.Tick += new System.EventHandler(this.FormOpacity_Tick);
+            // 
+            // AutoReapply
+            // 
+            this.AutoReapply.Enabled = true;
+            this.AutoReapply.Interval = 2500;
+            this.AutoReapply.Tick += new System.EventHandler(this.AutoReapply_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1125, 594);
+            this.ClientSize = new System.Drawing.Size(1145, 626);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -466,9 +527,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Form1";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AMD APU Tuning Utility";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -503,10 +567,14 @@
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Label lblAPU;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnROG;
-        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.NotifyIcon notifyIcon;
+        private Timer FormOpacity;
+        private Timer AutoReapply;
+        private Button btnGPU;
+        private Button btnPE;
+        private Label lblEd;
     }
 }
 
