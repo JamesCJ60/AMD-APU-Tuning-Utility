@@ -1020,6 +1020,11 @@
             this.nudShortBoostTDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudShortBoostTDP.Location = new System.Drawing.Point(231, 151);
             this.nudShortBoostTDP.Margin = new System.Windows.Forms.Padding(6);
+            this.nudShortBoostTDP.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.nudShortBoostTDP.Name = "nudShortBoostTDP";
             this.nudShortBoostTDP.Size = new System.Drawing.Size(126, 22);
             this.nudShortBoostTDP.TabIndex = 19;
@@ -1044,7 +1049,7 @@
             this.nudLongTDP.Location = new System.Drawing.Point(231, 104);
             this.nudLongTDP.Margin = new System.Windows.Forms.Padding(6);
             this.nudLongTDP.Maximum = new decimal(new int[] {
-            120,
+            200,
             0,
             0,
             0});
@@ -1058,7 +1063,7 @@
             this.nudTDP.Location = new System.Drawing.Point(231, 80);
             this.nudTDP.Margin = new System.Windows.Forms.Padding(6);
             this.nudTDP.Maximum = new decimal(new int[] {
-            120,
+            200,
             0,
             0,
             0});
