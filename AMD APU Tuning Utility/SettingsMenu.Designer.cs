@@ -39,7 +39,6 @@ namespace AMD_APU_Tuning_Utility
             this.cbSkinTemp = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cbCPUTurbo = new System.Windows.Forms.CheckBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.cbApplyStart = new System.Windows.Forms.CheckBox();
             this.cbBoot = new System.Windows.Forms.CheckBox();
             this.cbAuto = new System.Windows.Forms.CheckBox();
@@ -68,6 +67,7 @@ namespace AMD_APU_Tuning_Utility
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Theme = new System.Windows.Forms.Timer(this.components);
+            this.cbHidePremade = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSideGreen)).BeginInit();
@@ -110,13 +110,13 @@ namespace AMD_APU_Tuning_Utility
             this.panel3.AutoScroll = true;
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.cbHidePremade);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.cbROG);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.cbSkinTemp);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.cbCPUTurbo);
-            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.cbApplyStart);
             this.panel3.Controls.Add(this.cbBoot);
             this.panel3.Controls.Add(this.cbAuto);
@@ -157,7 +157,7 @@ namespace AMD_APU_Tuning_Utility
             this.label18.AutoSize = true;
             this.label18.CausesValidation = false;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(467, 365);
+            this.label18.Location = new System.Drawing.Point(466, 322);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(347, 45);
@@ -171,7 +171,7 @@ namespace AMD_APU_Tuning_Utility
             this.cbROG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbROG.AutoSize = true;
             this.cbROG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbROG.Location = new System.Drawing.Point(470, 342);
+            this.cbROG.Location = new System.Drawing.Point(470, 299);
             this.cbROG.Name = "cbROG";
             this.cbROG.Size = new System.Drawing.Size(228, 24);
             this.cbROG.TabIndex = 85;
@@ -185,7 +185,7 @@ namespace AMD_APU_Tuning_Utility
             this.label17.AutoSize = true;
             this.label17.CausesValidation = false;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(467, 309);
+            this.label17.Location = new System.Drawing.Point(467, 267);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(327, 30);
@@ -198,7 +198,7 @@ namespace AMD_APU_Tuning_Utility
             this.cbSkinTemp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSkinTemp.AutoSize = true;
             this.cbSkinTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbSkinTemp.Location = new System.Drawing.Point(470, 287);
+            this.cbSkinTemp.Location = new System.Drawing.Point(470, 244);
             this.cbSkinTemp.Name = "cbSkinTemp";
             this.cbSkinTemp.Size = new System.Drawing.Size(361, 24);
             this.cbSkinTemp.TabIndex = 83;
@@ -212,7 +212,7 @@ namespace AMD_APU_Tuning_Utility
             this.label16.AutoSize = true;
             this.label16.CausesValidation = false;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(467, 239);
+            this.label16.Location = new System.Drawing.Point(467, 196);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(326, 45);
@@ -225,7 +225,7 @@ namespace AMD_APU_Tuning_Utility
             this.cbCPUTurbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCPUTurbo.AutoSize = true;
             this.cbCPUTurbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbCPUTurbo.Location = new System.Drawing.Point(470, 217);
+            this.cbCPUTurbo.Location = new System.Drawing.Point(470, 174);
             this.cbCPUTurbo.Name = "cbCPUTurbo";
             this.cbCPUTurbo.Size = new System.Drawing.Size(209, 24);
             this.cbCPUTurbo.TabIndex = 81;
@@ -233,26 +233,12 @@ namespace AMD_APU_Tuning_Utility
             this.cbCPUTurbo.UseVisualStyleBackColor = true;
             this.cbCPUTurbo.CheckedChanged += new System.EventHandler(this.cbCPUTurbo_CheckedChanged);
             // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.CausesValidation = false;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(467, 132);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(309, 30);
-            this.label15.TabIndex = 80;
-            this.label15.Text = "Please make sure to keep the Premade/Custom Preset/\r\nHome menu open when using Au" +
-    "to Reapply.";
-            // 
             // cbApplyStart
             // 
             this.cbApplyStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbApplyStart.AutoSize = true;
             this.cbApplyStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbApplyStart.Location = new System.Drawing.Point(470, 167);
+            this.cbApplyStart.Location = new System.Drawing.Point(470, 127);
             this.cbApplyStart.Name = "cbApplyStart";
             this.cbApplyStart.Size = new System.Drawing.Size(128, 24);
             this.cbApplyStart.TabIndex = 79;
@@ -264,7 +250,7 @@ namespace AMD_APU_Tuning_Utility
             this.cbBoot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBoot.AutoSize = true;
             this.cbBoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbBoot.Location = new System.Drawing.Point(470, 192);
+            this.cbBoot.Location = new System.Drawing.Point(470, 152);
             this.cbBoot.Name = "cbBoot";
             this.cbBoot.Size = new System.Drawing.Size(123, 24);
             this.cbBoot.TabIndex = 78;
@@ -276,7 +262,7 @@ namespace AMD_APU_Tuning_Utility
             this.cbAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAuto.AutoSize = true;
             this.cbAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbAuto.Location = new System.Drawing.Point(470, 107);
+            this.cbAuto.Location = new System.Drawing.Point(470, 104);
             this.cbAuto.Name = "cbAuto";
             this.cbAuto.Size = new System.Drawing.Size(124, 24);
             this.cbAuto.TabIndex = 77;
@@ -570,6 +556,19 @@ namespace AMD_APU_Tuning_Utility
             this.Theme.Interval = 500;
             this.Theme.Tick += new System.EventHandler(this.Theme_Tick);
             // 
+            // cbHidePremade
+            // 
+            this.cbHidePremade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbHidePremade.AutoSize = true;
+            this.cbHidePremade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbHidePremade.Location = new System.Drawing.Point(470, 370);
+            this.cbHidePremade.Name = "cbHidePremade";
+            this.cbHidePremade.Size = new System.Drawing.Size(235, 24);
+            this.cbHidePremade.TabIndex = 87;
+            this.cbHidePremade.Text = "Show Pre-Made Preset Menu";
+            this.cbHidePremade.UseVisualStyleBackColor = true;
+            this.cbHidePremade.CheckedChanged += new System.EventHandler(this.cbHidePremade_CheckedChanged);
+            // 
             // SettingsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -626,7 +625,6 @@ namespace AMD_APU_Tuning_Utility
         private System.Windows.Forms.CheckBox cbBoot;
         private System.Windows.Forms.CheckBox cbAuto;
         private System.Windows.Forms.CheckBox cbApplyStart;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox cbCPUTurbo;
         private System.Windows.Forms.Label label17;
@@ -634,5 +632,6 @@ namespace AMD_APU_Tuning_Utility
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.CheckBox cbROG;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbHidePremade;
     }
 }

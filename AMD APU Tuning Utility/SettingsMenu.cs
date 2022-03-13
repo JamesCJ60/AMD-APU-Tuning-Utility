@@ -36,6 +36,7 @@ namespace AMD_APU_Tuning_Utility
         bool CPUTurbo = (bool)Settings.Default["CPUTurbo"];
         bool SkinTemp = (bool)Settings.Default["SkinTemp"];
         bool AC = (bool)Settings.Default["AC"];
+        bool Premade = (bool)Settings.Default["hidePremade"];
 
         int topBar1 = 0;
         int topBar2 = 180;
@@ -57,6 +58,7 @@ namespace AMD_APU_Tuning_Utility
             cbCPUTurbo.Checked = CPUTurbo;
             cbSkinTemp.Checked = SkinTemp;
             cbROG.Checked = AC;
+            cbHidePremade.Checked = Premade;
 
             if (useDefaultTheme == false)
             {
@@ -348,6 +350,12 @@ namespace AMD_APU_Tuning_Utility
             }
 
             Settings.Default["AC"] = AC;
+            Settings.Default.Save();
+        }
+
+        private void cbHidePremade_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default["hidePremade"] = (bool)cbHidePremade.Checked;
             Settings.Default.Save();
         }
     }

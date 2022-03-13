@@ -159,16 +159,25 @@ namespace AMD_APU_Tuning_Utility
             path3 = path3 + "\\bin\\oc.exe";
             RyzenADJ = null;
 
+            if (rbStatic.Checked == true)
+            {
+                iGPUClock = (int)nudStatic.Value;
+                RyzenADJ = RyzenADJ + "--gfx-clk=" + iGPUClock + " ";
+            }
+
+            if (cbcoGFXMag.Text.Contains("+"))
+            {
+                RyzenADJ = RyzenADJ + "--set-cogfx=" + (int)nudcoGFX.Value + " ";
+            }
+            if (cbcoGFXMag.Text.Contains("-"))
+            {
+
+                RyzenADJ = RyzenADJ + "--set-cogfx=" + Convert.ToUInt32(0x100000 - (int)nudcoGFX.Value) + " ";
+                
+            }
+
             if (cbiGPUOC.Checked == true)
             {
-                if (rbStatic.Checked == true)
-                {
-                    iGPUClock = (int)nudStatic.Value;
-                    RyzenADJ = RyzenADJ + "--gfx-clk=" + iGPUClock + " ";
-                }
-
-                
-
                 if (RyzenADJ == "" || RyzenADJ == null)
                 {
 

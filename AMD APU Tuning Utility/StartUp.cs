@@ -124,7 +124,7 @@ namespace AMD_APU_Tuning_Utility
                     canRun = false;
                 }
             }
-            else if (CPUName.Contains("Van Gogh") || CPUName.Contains("3020e") || CPUName.Contains("3015e") || CPUName.Contains("3050e") || CPUName.Contains("3020E") || CPUName.Contains("3015E") || CPUName.Contains("3050E"))
+            else if (CPUName.Contains("Van Gogh") || CPUName.Contains("3020e") || CPUName.Contains("3015e") || CPUName.Contains("3050e") || CPUName.Contains("3020E") || CPUName.Contains("3015E") || CPUName.Contains("AMD Custom APU 0405") ||  CPUName.Contains("3050E"))
             {
                 canRun = true;
             }

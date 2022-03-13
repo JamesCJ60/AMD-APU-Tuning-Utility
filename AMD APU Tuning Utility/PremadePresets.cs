@@ -218,30 +218,43 @@ namespace AMD_APU_Tuning_Utility
             }
             else if (cbAPUSeries.Text == "AYA Neo (4500U)")
             {
-                cbAPUPreset.Items.Add("Docked Mode (30w)");
-                cbAPUPreset.Items.Add("CPU Performance Mode (25w)");
-                cbAPUPreset.Items.Add("Balanced Performance Mode (18w)");
+                cbAPUPreset.Items.Add("Docked Mode (35w)");
+                cbAPUPreset.Items.Add("Performance Mode (25w)");
                 cbAPUPreset.Items.Add("Balanced Performance Mode (15w)");
-                cbAPUPreset.Items.Add("iGPU Performance Mode (22w)");
-                cbAPUPreset.Items.Add("iGPU Performance Mode (18w)");
-                cbAPUPreset.Items.Add("iGPU Performance Mode (15w)");
-                
-                cbAPUPreset.Items.Add("2D Game Mode (5w)");
+                cbAPUPreset.Items.Add("Battery Mode (12w)");
+                cbAPUPreset.Items.Add("2D Game Mode (8w)");
 
                 lbPresetValues.Items.Clear();
-                lbPresetValues.Items.Add("Device Options:");
-                lbPresetValues.Items.Add("");
-                lbPresetValues.Items.Add("Docked Mode (30w) - Sets power limit to 30w, disables turbo (2GHz Max CPU)");
-                lbPresetValues.Items.Add("CPU Performance Mode (25w) - Sets power limit to 25w");
-                lbPresetValues.Items.Add("Balanced Performance Mode (18w) - Sets power limit to 18w, disables turbo (1.6GHz Max CPU)");
-                lbPresetValues.Items.Add("Balanced Performance Mode (15w) - Sets power limit to 15w, disables turbo (1.6GHz Max CPU)");
-                lbPresetValues.Items.Add("iGPU Performance Mode (22w) - Sets power limit to 22w, disables turbo (1.4GHz Max CPU)");
-                lbPresetValues.Items.Add("iGPU Performance Mode (18w) - Sets power limit to 18w, disables turbo (1.3GHz Max CPU)");
-                lbPresetValues.Items.Add("iGPU Performance Mode (15w) - Sets power limit to 15w, disables turbo (1.2GHz Max CPU)");
-                
-                lbPresetValues.Items.Add("2D Game Mode (5w) - Sets power limit to 5w, disables turbo (1.2GHz Max CPU)");
-                lbPresetValues.Items.Add("");
-                lbPresetValues.Items.Add("Max CPU clocks will be different on APUs with more or less base clock than the 4500U.");
+            }
+            else if (cbAPUSeries.Text == "AYA Neo (4800U)")
+            {
+                cbAPUPreset.Items.Add("Docked Mode (38w)");
+                cbAPUPreset.Items.Add("Performance Mode (28w)");
+                cbAPUPreset.Items.Add("Balanced Performance Mode (18w)");
+                cbAPUPreset.Items.Add("Battery Mode (12w)");
+                cbAPUPreset.Items.Add("2D Game Mode (8w)");
+
+                lbPresetValues.Items.Clear();
+            }
+            else if (cbAPUSeries.Text == "AYA Neo Next")
+            {
+                cbAPUPreset.Items.Add("Docked Mode (35w)");
+                cbAPUPreset.Items.Add("Performance Mode (25w)");
+                cbAPUPreset.Items.Add("Balanced Performance Mode (15w)");
+                cbAPUPreset.Items.Add("Battery Mode (12w)");
+                cbAPUPreset.Items.Add("2D Game Mode (10w)");
+
+                lbPresetValues.Items.Clear();
+            }
+            else if (cbAPUSeries.Text == "Steam Deck")
+            {
+                cbAPUPreset.Items.Add("Docked Mode (30w)");
+                cbAPUPreset.Items.Add("Performance Mode (28w)");
+                cbAPUPreset.Items.Add("Balanced Performance Mode (15w)");
+                cbAPUPreset.Items.Add("Battery Mode (12w)");
+                cbAPUPreset.Items.Add("2D Game Mode (8w)");
+
+                lbPresetValues.Items.Clear();
             }
         }
 
@@ -411,7 +424,35 @@ namespace AMD_APU_Tuning_Utility
                 boostMode = 1;
 
             }
-            else if (cbAPUPreset.Text == "CPU Performance Mode (25w)")
+            else if (cbAPUPreset.Text == "Docked Mode (35w)")
+            {
+                tempLimit = 105;
+                CPUTDP = 35;
+                LongBoostDuration = 5;
+                longBoostTDP = 35;
+                shortBoostDuration = 275;
+                shortBoostTDP = 35;
+                VRM = 80;
+                maxCPUCores = 100;
+                MaxCPUPerf = 100;
+                boostMode = 1;
+
+            }
+            else if (cbAPUPreset.Text == "Docked Mode (38w)")
+            {
+                tempLimit = 105;
+                CPUTDP = 38;
+                LongBoostDuration = 5;
+                longBoostTDP = 38;
+                shortBoostDuration = 275;
+                shortBoostTDP = 38;
+                VRM = 80;
+                maxCPUCores = 100;
+                MaxCPUPerf = 100;
+                boostMode = 1;
+
+            }
+            else if (cbAPUPreset.Text == "Performance Mode (25w)")
             {
                 tempLimit = 105;
                 CPUTDP = 25;
@@ -425,18 +466,19 @@ namespace AMD_APU_Tuning_Utility
                 boostMode = 1;
 
             }
-            else if (cbAPUPreset.Text == "Balanced Performance Mode (18w)")
+            else if (cbAPUPreset.Text == "Performance Mode (28w)")
             {
                 tempLimit = 105;
-                CPUTDP = 18;
+                CPUTDP = 28;
                 LongBoostDuration = 5;
-                longBoostTDP = 18;
+                longBoostTDP = 28;
                 shortBoostDuration = 275;
-                shortBoostTDP = 20;
-                VRM = 50;
+                shortBoostTDP = 28;
+                VRM = 60;
                 maxCPUCores = 100;
-                MaxCPUPerf = 70;
-                boostMode = 0;
+                MaxCPUPerf = 87;
+                boostMode = 1;
+
             }
             else if (cbAPUPreset.Text == "Balanced Performance Mode (15w)")
             {
@@ -451,66 +493,40 @@ namespace AMD_APU_Tuning_Utility
                 MaxCPUPerf = 70;
                 boostMode = 0;
             }
-            else if (cbAPUPreset.Text == "iGPU Performance Mode (22w)")
+            else if (cbAPUPreset.Text == "Battery Mode (12w)")
             {
                 tempLimit = 105;
-                CPUTDP = 25;
+                CPUTDP = 12;
                 LongBoostDuration = 5;
-                longBoostTDP = 22;
+                longBoostTDP = 12;
                 shortBoostDuration = 275;
-                shortBoostTDP = 22;
-                VRM = 50;
-                maxCPUCores = 83;
-                MaxCPUPerf = 61;
-                boostMode = 0;
-            }
-            else if (cbAPUPreset.Text == "iGPU Performance Mode (18w)")
-            {
-                tempLimit = 105;
-                CPUTDP = 25;
-                LongBoostDuration = 5;
-                longBoostTDP = 18;
-                shortBoostDuration = 275;
-                shortBoostTDP = 18;
-                VRM = 50;
-                maxCPUCores = 83;
-                MaxCPUPerf = 57;
-                boostMode = 0;
-            }
-            else if (cbAPUPreset.Text == "iGPU Performance Mode (15w)")
-            {
-                tempLimit = 105;
-                CPUTDP = 25;
-                LongBoostDuration = 5;
-                longBoostTDP = 15;
-                shortBoostDuration = 275;
-                shortBoostTDP = 15;
-                VRM = 50;
-                maxCPUCores = 83;
-                MaxCPUPerf = 53;
-                boostMode = 0;
-            }
-            else if (cbAPUPreset.Text == "iGPU Performance Mode (10w)")
-            {
-                tempLimit = 105;
-                CPUTDP = 10;
-                LongBoostDuration = 5;
-                longBoostTDP = 10;
-                shortBoostDuration = 275;
-                shortBoostTDP = 15;
+                shortBoostTDP = 12;
                 VRM = 50;
                 maxCPUCores = 66;
                 MaxCPUPerf = 53;
                 boostMode = 0;
             }
-            else if (cbAPUPreset.Text == "2D Game Mode (5w)")
+            else if (cbAPUPreset.Text == "2D Game Mode (8w)")
             {
                 tempLimit = 105;
-                CPUTDP = 5;
-                LongBoostDuration = 5;
-                longBoostTDP = 5;
+                CPUTDP = 8;
+                LongBoostDuration = 8;
+                longBoostTDP = 8;
                 shortBoostDuration = 275;
                 shortBoostTDP = 5;
+                VRM = 50;
+                maxCPUCores = 66;
+                MaxCPUPerf = 58;
+                boostMode = 0;
+            }
+            else if (cbAPUPreset.Text == "2D Game Mode (10w)")
+            {
+                tempLimit = 105;
+                CPUTDP = 10;
+                LongBoostDuration = 8;
+                longBoostTDP = 10;
+                shortBoostDuration = 275;
+                shortBoostTDP = 10;
                 VRM = 50;
                 maxCPUCores = 66;
                 MaxCPUPerf = 58;
@@ -520,7 +536,7 @@ namespace AMD_APU_Tuning_Utility
 
 
 
-            if(tempLimit > 100)
+            if (tempLimit > 100)
             {
                 tempLimit = 100;
             }
@@ -606,48 +622,6 @@ namespace AMD_APU_Tuning_Utility
                         MessageBox.Show("Something went wrong when applying your settings :(", "Error!");
                     }
                 }
-            }
-
-            System.Threading.Thread.Sleep(250);
-
-            if (cbAPUSeries.Text == "AYA Neo (4500U)")
-            {
-                System.Diagnostics.Process process = new System.Diagnostics.Process();
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                //CPUPerf
-                startInfo.FileName = "powercfg";
-                startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PERFBOOSTMODE " + boostMode;
-                process.StartInfo = startInfo;
-                process.Start();
-                System.Threading.Thread.Sleep(50);
-
-                startInfo.FileName = "powercfg";
-                startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX " + MaxCPUPerf;
-                process.StartInfo = startInfo;
-                process.Start();
-                System.Threading.Thread.Sleep(50);
-                startInfo.FileName = "powercfg";
-                startInfo.Arguments = "-setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN " + (MaxCPUPerf);
-                process.StartInfo = startInfo;
-                process.Start();
-                System.Threading.Thread.Sleep(50);
-
-
-                /*CPUCores
-                startInfo.FileName = "powercfg";
-                startInfo.Arguments = "-setacvalueindex scheme_current sub_processor CPMAXCORES " + maxCPUCores;
-                process.StartInfo = startInfo;
-                process.Start();
-                System.Threading.Thread.Sleep(250);
-                */
-
-                //Activate
-                startInfo.FileName = "powercfg";
-                startInfo.Arguments = "/setactive scheme_current";
-                process.StartInfo = startInfo;
-                process.Start();
-
             }
         }
 

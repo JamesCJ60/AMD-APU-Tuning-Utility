@@ -82,7 +82,8 @@ namespace AMD_APU_Tuning_Utility
                 notifyIcon.Visible = true;
             }
             //panelMenu.Controls.SetChildIndex(btnSettings, 0); 
-           panelMenu.Controls.SetChildIndex(btnGPU, 5);
+           panelMenu.Controls.SetChildIndex(btnGPU, 6);
+           panelMenu.Controls.SetChildIndex(btnCPUOC, 6);
         }
 
 
@@ -279,7 +280,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -320,7 +323,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -361,7 +366,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -401,7 +408,9 @@ namespace AMD_APU_Tuning_Utility
             btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -443,7 +452,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -484,7 +495,9 @@ namespace AMD_APU_Tuning_Utility
             btnSettings.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -524,7 +537,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -562,7 +577,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnSettings.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -611,6 +628,8 @@ namespace AMD_APU_Tuning_Utility
 
         private void ThemeMain_Tick(object sender, EventArgs e)
         {
+            btnPPresets.Visible = (bool)Settings.Default["hidePremade"];
+
             /*
             try
             {
@@ -984,9 +1003,30 @@ namespace AMD_APU_Tuning_Utility
                 series = "6000";
                 lblAPU.Text = "APU: Ryzen 5 6600U (6 Cores 12 Threads @ TBA/TBA)";
             }
+            else if(CPUName.Contains("AMD Custom APU 0405"))
+            {
+                CPUName = "Van Gogh";
+                lblAPU.Text = "APU: Van Gogh (4 Cores 8 Threads @ 3.5GHz/2.8GHz)";
+            }
             else
             {
                 lblAPU.Text = "APU: " + CPUName;
+            }
+
+            if (CPUName.Contains("HX") || CPUName.Contains("G"))
+            {
+                btnCPUOC.Visible = true;
+            }
+            else
+            {
+                btnCPUOC.Visible = false;
+            }
+
+            if (CPUName.Contains("AMD Custom APU 0405") && this.WindowState == FormWindowState.Normal || CPUName.Contains("Van Gogh") && this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+
+                Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 0, 0));
             }
 
             Settings.Default["Series"] = series;
@@ -1142,7 +1182,9 @@ namespace AMD_APU_Tuning_Utility
             btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnSettings.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -1176,7 +1218,9 @@ namespace AMD_APU_Tuning_Utility
             btnROG.BackColor = Color.FromArgb(51, 51, 76);
             btnSettings.BackColor = Color.FromArgb(51, 51, 76);
             btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPUOC.BackColor = Color.FromArgb(51, 51, 76);
 
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
@@ -1190,6 +1234,40 @@ namespace AMD_APU_Tuning_Utility
             panelControl.Controls.Clear();
             panelControl.Controls.Add(ProjectE.Instance);
             ProjectE.Instance.Dock = DockStyle.Fill;
+        }
+
+        private void btnCPUOC_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "CPU Overclocking";
+            btnCPUOC.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
+            btnCPUOC.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+            panelTitleBar.BackColor = Color.FromArgb(topBar1, topBar2, topBar3);
+            panelLogo.BackColor = Color.FromArgb(sideBar1, sideBar2, sideBar3);
+
+
+            btnHome.BackColor = Color.FromArgb(51, 51, 76);
+            btnCPresets.BackColor = Color.FromArgb(51, 51, 76);
+            btnSmartP.BackColor = Color.FromArgb(51, 51, 76);
+            btnPPresets.BackColor = Color.FromArgb(51, 51, 76);
+            btnSmartB.BackColor = Color.FromArgb(51, 51, 76);
+            btnSystemInfo.BackColor = Color.FromArgb(51, 51, 76);
+            btnROG.BackColor = Color.FromArgb(51, 51, 76);
+            btnSettings.BackColor = Color.FromArgb(51, 51, 76);
+            btnGPU.BackColor = Color.FromArgb(51, 51, 76);
+
+            btnGPU.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSystemInfo.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnHome.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnCPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSmartP.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnPPresets.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSmartB.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnROG.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            btnSettings.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+
+            panelControl.Controls.Clear();
+            panelControl.Controls.Add(CPUOC.Instance);
+            CPUOC.Instance.Dock = DockStyle.Fill;
         }
     }
 }

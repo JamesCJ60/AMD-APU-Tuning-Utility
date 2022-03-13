@@ -45,14 +45,18 @@ namespace AMD_APU_Tuning_Utility
             this.label2 = new System.Windows.Forms.Label();
             this.rbStatic = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.cbNVidia = new System.Windows.Forms.CheckBox();
             this.cbiGPUOC = new System.Windows.Forms.CheckBox();
             this.btnApply = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.Theme = new System.Windows.Forms.Timer(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.nudcoGFX = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbcoGFXMag = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudMem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCore)).BeginInit();
@@ -60,13 +64,14 @@ namespace AMD_APU_Tuning_Utility
             ((System.ComponentModel.ISupportInitialize)(this.tbStatic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStatic)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudcoGFX)).BeginInit();
             this.SuspendLayout();
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(100, 299);
+            this.label22.Location = new System.Drawing.Point(100, 342);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 18);
             this.label22.TabIndex = 194;
@@ -76,7 +81,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(100, 236);
+            this.label21.Location = new System.Drawing.Point(100, 279);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(17, 18);
             this.label21.TabIndex = 193;
@@ -85,7 +90,7 @@ namespace AMD_APU_Tuning_Utility
             // nudMem
             // 
             this.nudMem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudMem.Location = new System.Drawing.Point(40, 298);
+            this.nudMem.Location = new System.Drawing.Point(40, 341);
             this.nudMem.Maximum = new decimal(new int[] {
             300,
             0,
@@ -99,7 +104,7 @@ namespace AMD_APU_Tuning_Utility
             // tbMem
             // 
             this.tbMem.LargeChange = 20;
-            this.tbMem.Location = new System.Drawing.Point(123, 298);
+            this.tbMem.Location = new System.Drawing.Point(123, 341);
             this.tbMem.Maximum = 300;
             this.tbMem.Name = "tbMem";
             this.tbMem.Size = new System.Drawing.Size(300, 45);
@@ -111,7 +116,7 @@ namespace AMD_APU_Tuning_Utility
             // nudCore
             // 
             this.nudCore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCore.Location = new System.Drawing.Point(40, 235);
+            this.nudCore.Location = new System.Drawing.Point(40, 278);
             this.nudCore.Maximum = new decimal(new int[] {
             250,
             0,
@@ -125,7 +130,7 @@ namespace AMD_APU_Tuning_Utility
             // tbCore
             // 
             this.tbCore.LargeChange = 20;
-            this.tbCore.Location = new System.Drawing.Point(123, 235);
+            this.tbCore.Location = new System.Drawing.Point(123, 278);
             this.tbCore.Maximum = 250;
             this.tbCore.Name = "tbCore";
             this.tbCore.Size = new System.Drawing.Size(300, 45);
@@ -138,7 +143,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(36, 277);
+            this.label20.Location = new System.Drawing.Point(36, 320);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(110, 18);
             this.label20.TabIndex = 188;
@@ -148,7 +153,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(37, 214);
+            this.label19.Location = new System.Drawing.Point(37, 257);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 18);
             this.label19.TabIndex = 187;
@@ -159,7 +164,7 @@ namespace AMD_APU_Tuning_Utility
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(9, 190);
+            this.label1.Location = new System.Drawing.Point(9, 233);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 24);
@@ -255,18 +260,6 @@ namespace AMD_APU_Tuning_Utility
             this.panel1.Size = new System.Drawing.Size(870, 83);
             this.panel1.TabIndex = 213;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(10, 346);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(351, 36);
-            this.label14.TabIndex = 220;
-            this.label14.Text = "Warning: Overclocking can cause stability issues or \r\neven damage  to hardware th" +
-    "at we are not liable for. ";
-            // 
             // cbNVidia
             // 
             this.cbNVidia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -311,6 +304,18 @@ namespace AMD_APU_Tuning_Utility
             this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(10, 389);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(351, 36);
+            this.label14.TabIndex = 220;
+            this.label14.Text = "Warning: Overclocking can cause stability issues or \r\neven damage  to hardware th" +
+    "at we are not liable for. ";
+            // 
             // Theme
             // 
             this.Theme.Enabled = true;
@@ -346,18 +351,68 @@ namespace AMD_APU_Tuning_Utility
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(37, 138);
+            this.label15.Location = new System.Drawing.Point(34, 126);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(395, 32);
             this.label15.TabIndex = 220;
             this.label15.Text = "iGPU overclocking will cause the clock speed to be locked to\r\nwhat you set and wi" +
     "ll require a system reboot to go back to normal";
             // 
+            // nudcoGFX
+            // 
+            this.nudcoGFX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudcoGFX.Location = new System.Drawing.Point(37, 184);
+            this.nudcoGFX.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudcoGFX.Name = "nudcoGFX";
+            this.nudcoGFX.Size = new System.Drawing.Size(56, 22);
+            this.nudcoGFX.TabIndex = 222;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 163);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(154, 18);
+            this.label5.TabIndex = 221;
+            this.label5.Text = "Curve Optimiser GFX:";
+            // 
+            // cbcoGFXMag
+            // 
+            this.cbcoGFXMag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbcoGFXMag.FormattingEnabled = true;
+            this.cbcoGFXMag.Items.AddRange(new object[] {
+            "+ Positive",
+            "- Negative"});
+            this.cbcoGFXMag.Location = new System.Drawing.Point(100, 185);
+            this.cbcoGFXMag.Name = "cbcoGFXMag";
+            this.cbcoGFXMag.Size = new System.Drawing.Size(96, 21);
+            this.cbcoGFXMag.TabIndex = 223;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(33, 209);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(375, 16);
+            this.label3.TabIndex = 224;
+            this.label3.Text = "iGPU over/undervolting. leave at 0 for no chnages to be made.";
+            // 
             // GPUOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbcoGFXMag);
+            this.Controls.Add(this.nudcoGFX);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
@@ -388,6 +443,7 @@ namespace AMD_APU_Tuning_Utility
             ((System.ComponentModel.ISupportInitialize)(this.nudStatic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudcoGFX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,5 +474,9 @@ namespace AMD_APU_Tuning_Utility
         private System.Windows.Forms.CheckBox cbiGPUOC;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown nudcoGFX;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbcoGFXMag;
+        private System.Windows.Forms.Label label3;
     }
 }

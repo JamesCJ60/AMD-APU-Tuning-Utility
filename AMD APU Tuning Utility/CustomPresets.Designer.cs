@@ -560,7 +560,7 @@
             this.nudVRMMax.Location = new System.Drawing.Point(231, 263);
             this.nudVRMMax.Margin = new System.Windows.Forms.Padding(6);
             this.nudVRMMax.Maximum = new decimal(new int[] {
-            200,
+            300,
             0,
             0,
             0});
@@ -574,7 +574,7 @@
             this.nudVRM.Location = new System.Drawing.Point(231, 236);
             this.nudVRM.Margin = new System.Windows.Forms.Padding(6);
             this.nudVRM.Maximum = new decimal(new int[] {
-            200,
+            300,
             0,
             0,
             0});
@@ -1021,7 +1021,7 @@
             this.nudShortBoostTDP.Location = new System.Drawing.Point(231, 151);
             this.nudShortBoostTDP.Margin = new System.Windows.Forms.Padding(6);
             this.nudShortBoostTDP.Maximum = new decimal(new int[] {
-            200,
+            250,
             0,
             0,
             0});
@@ -1049,7 +1049,7 @@
             this.nudLongTDP.Location = new System.Drawing.Point(231, 104);
             this.nudLongTDP.Margin = new System.Windows.Forms.Padding(6);
             this.nudLongTDP.Maximum = new decimal(new int[] {
-            200,
+            250,
             0,
             0,
             0});
@@ -1063,7 +1063,7 @@
             this.nudTDP.Location = new System.Drawing.Point(231, 80);
             this.nudTDP.Margin = new System.Windows.Forms.Padding(6);
             this.nudTDP.Maximum = new decimal(new int[] {
-            200,
+            250,
             0,
             0,
             0});

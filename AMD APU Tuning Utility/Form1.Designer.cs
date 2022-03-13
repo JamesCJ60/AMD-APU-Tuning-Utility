@@ -33,6 +33,7 @@ namespace AMD_APU_Tuning_Utility
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCPUOC = new System.Windows.Forms.Button();
             this.btnGPU = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnROG = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@ namespace AMD_APU_Tuning_Utility
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnCPUOC);
             this.panelMenu.Controls.Add(this.btnGPU);
             this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnROG);
@@ -88,6 +90,27 @@ namespace AMD_APU_Tuning_Utility
             this.panelMenu.Size = new System.Drawing.Size(258, 626);
             this.panelMenu.TabIndex = 0;
             // 
+            // btnCPUOC
+            // 
+            this.btnCPUOC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCPUOC.FlatAppearance.BorderSize = 0;
+            this.btnCPUOC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCPUOC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCPUOC.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCPUOC.Image = ((System.Drawing.Image)(resources.GetObject("btnCPUOC.Image")));
+            this.btnCPUOC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCPUOC.Location = new System.Drawing.Point(0, 625);
+            this.btnCPUOC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnCPUOC.Name = "btnCPUOC";
+            this.btnCPUOC.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnCPUOC.Size = new System.Drawing.Size(241, 60);
+            this.btnCPUOC.TabIndex = 12;
+            this.btnCPUOC.Text = "     CPU Overclocking";
+            this.btnCPUOC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCPUOC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCPUOC.UseVisualStyleBackColor = true;
+            this.btnCPUOC.Click += new System.EventHandler(this.btnCPUOC_Click);
+            // 
             // btnGPU
             // 
             this.btnGPU.Dock = System.Windows.Forms.DockStyle.Top;
@@ -101,7 +124,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnGPU.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGPU.Name = "btnGPU";
             this.btnGPU.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnGPU.Size = new System.Drawing.Size(258, 60);
+            this.btnGPU.Size = new System.Drawing.Size(241, 60);
             this.btnGPU.TabIndex = 11;
             this.btnGPU.Text = "     GPU Overclocking";
             this.btnGPU.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,7 +145,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnSettings.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(258, 60);
+            this.btnSettings.Size = new System.Drawing.Size(241, 60);
             this.btnSettings.TabIndex = 10;
             this.btnSettings.Text = "     Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,7 +166,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnROG.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnROG.Name = "btnROG";
             this.btnROG.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnROG.Size = new System.Drawing.Size(258, 60);
+            this.btnROG.Size = new System.Drawing.Size(241, 60);
             this.btnROG.TabIndex = 10;
             this.btnROG.Text = "     ROG AC Modes";
             this.btnROG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +187,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnSystemInfo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSystemInfo.Name = "btnSystemInfo";
             this.btnSystemInfo.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSystemInfo.Size = new System.Drawing.Size(258, 60);
+            this.btnSystemInfo.Size = new System.Drawing.Size(241, 60);
             this.btnSystemInfo.TabIndex = 6;
             this.btnSystemInfo.Text = "     System Info";
             this.btnSystemInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +208,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnSmartP.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSmartP.Name = "btnSmartP";
             this.btnSmartP.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSmartP.Size = new System.Drawing.Size(258, 60);
+            this.btnSmartP.Size = new System.Drawing.Size(241, 60);
             this.btnSmartP.TabIndex = 5;
             this.btnSmartP.Text = "     Adaptive Performance";
             this.btnSmartP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,7 +229,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnSmartB.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSmartB.Name = "btnSmartB";
             this.btnSmartB.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnSmartB.Size = new System.Drawing.Size(258, 60);
+            this.btnSmartB.Size = new System.Drawing.Size(241, 60);
             this.btnSmartB.TabIndex = 4;
             this.btnSmartB.Text = "     Adaptive ECO";
             this.btnSmartB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +250,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnCPresets.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCPresets.Name = "btnCPresets";
             this.btnCPresets.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnCPresets.Size = new System.Drawing.Size(258, 60);
+            this.btnCPresets.Size = new System.Drawing.Size(241, 60);
             this.btnCPresets.TabIndex = 3;
             this.btnCPresets.Text = "     Custom Presets";
             this.btnCPresets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,7 +272,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnPPresets.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPPresets.Name = "btnPPresets";
             this.btnPPresets.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnPPresets.Size = new System.Drawing.Size(258, 60);
+            this.btnPPresets.Size = new System.Drawing.Size(241, 60);
             this.btnPPresets.TabIndex = 2;
             this.btnPPresets.Text = "     Pre-Made Presets";
             this.btnPPresets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,7 +294,7 @@ namespace AMD_APU_Tuning_Utility
             this.btnHome.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(258, 60);
+            this.btnHome.Size = new System.Drawing.Size(241, 60);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "     Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,7 +312,7 @@ namespace AMD_APU_Tuning_Utility
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(258, 85);
+            this.panelLogo.Size = new System.Drawing.Size(241, 85);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
@@ -346,7 +369,7 @@ namespace AMD_APU_Tuning_Utility
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(86, 16);
             this.lblVersion.TabIndex = 2;
-            this.lblVersion.Text = "2.0.5.4 Stable";
+            this.lblVersion.Text = "2.0.5.5 Stable";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblVersion.Visible = false;
             this.lblVersion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
@@ -575,6 +598,7 @@ namespace AMD_APU_Tuning_Utility
         private Button btnGPU;
         private Button btnPE;
         private Label lblEd;
+        private Button btnCPUOC;
     }
 }
 

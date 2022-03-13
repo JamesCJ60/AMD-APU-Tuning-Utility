@@ -437,6 +437,11 @@ namespace AMD_APU_Tuning_Utility
                     maxWatt = 128;
                     minWatt = 65;
                 }
+                else if (apuname.Contains("Van Gogh"))
+                {
+                    maxWatt = 30;
+                    minWatt = 5;
+                }
 
                 int newWatt = maxWatt;
 

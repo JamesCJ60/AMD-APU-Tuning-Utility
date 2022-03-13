@@ -130,6 +130,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPUOC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CPUOC.Designer.cs">
+      <DependentUpon>CPUOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomPresets.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <Compile Include="SysInfo.Designer.cs">
       <DependentUpon>SysInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CPUOC.resx">
+      <DependentUpon>CPUOC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomPresets.resx">
       <DependentUpon>CustomPresets.cs</DependentUpon>
     </EmbeddedResource>

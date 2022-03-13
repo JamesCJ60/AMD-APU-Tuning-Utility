@@ -166,7 +166,7 @@
             this.cbAPUPreset.FormattingEnabled = true;
             this.cbAPUPreset.Location = new System.Drawing.Point(259, 63);
             this.cbAPUPreset.Name = "cbAPUPreset";
-            this.cbAPUPreset.Size = new System.Drawing.Size(219, 24);
+            this.cbAPUPreset.Size = new System.Drawing.Size(244, 24);
             this.cbAPUPreset.TabIndex = 4;
             this.cbAPUPreset.SelectedIndexChanged += new System.EventHandler(this.cbAPUPreset_SelectedIndexChanged);
             // 
@@ -189,10 +189,14 @@
             "Ryzen 5000 Series U",
             "Ryzen 5000 Series H/HS/HX",
             "Ryzen 6000 Series U",
-            "Ryzen 6000 Series H/HS/HX"});
+            "Ryzen 6000 Series H/HS/HX",
+            "AYA Neo (4500U)",
+            "AYA Neo (4800U)",
+            "AYA Neo Next",
+            "Steam Deck"});
             this.cbAPUSeries.Location = new System.Drawing.Point(259, 20);
             this.cbAPUSeries.Name = "cbAPUSeries";
-            this.cbAPUSeries.Size = new System.Drawing.Size(219, 24);
+            this.cbAPUSeries.Size = new System.Drawing.Size(244, 24);
             this.cbAPUSeries.TabIndex = 3;
             this.cbAPUSeries.SelectedIndexChanged += new System.EventHandler(this.cbAPUSeries_SelectedIndexChanged);
             // 
