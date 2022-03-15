@@ -1,6 +1,6 @@
 # AMD APU Tuning Utility
 
-If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2022` or `@sbski#2700` on [discord](https://discord.gg/M3hVqnT4pQ). 
+If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2022` or `@sbski#2700` in our [discord community server](https://discord.gg/M3hVqnT4pQ). 
 
 Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would like to support the development of AMD APU Tuning Utility, you can do so [here](https://www.patreon.com/aatusoftware)
 
@@ -46,6 +46,8 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 - If you intend to use AMD APU Tuning Utility in a video/text post online (e.g. YouTube, Reddit) please credit the AMD APU Tuning Utility team by linking to the AMD APU Tuning Utility GitHub release page! We ask this so that viewers/readers can download the software from a trusted source and so the developers get the proper recognition for their work.
 - AMD APU Tuning Utility Team is not liable for any damages that my occur from using AMD APU Tuning Utility or RyzenADJ, Please use at your own risk!
 - "AMD", "APU", "Ryzen", and "AMD Ryzen" are trademarked by and belong to Advanced Micro Devices, Inc. "ROG", and "Armoury Crate" are trademarked by and belong to AsusTek Computer, Inc. AMD APU Tuning Utility Team makes no claims to these assets and uses them for informational purposes only.
+- If you wish to gain developer access to AMD APU Tuning Utility, ping `@JamesCJ#2022` or `@sbski#2700` in our [discord community server](https://discord.gg/M3hVqnT4pQ). 
+
 
 ## Source Code
 You can find all the source code for the many different versions and elements of AATU below:
