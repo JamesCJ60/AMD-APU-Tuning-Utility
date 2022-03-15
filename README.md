@@ -39,7 +39,6 @@ Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 
 You can also gain more performance on unlocked HX/G APUs (4000 series and newer) by using Apative Performance mode with Turbo Boost Overdrive CPU enabled.
 
-AMD PBO with +200MHz offset: AATU TBO CPU with same +200MHz offset: 
 ![image](https://user-images.githubusercontent.com/20888782/158470309-5c489e11-1920-4373-a589-eff03d79d4d8.png)
 
 
