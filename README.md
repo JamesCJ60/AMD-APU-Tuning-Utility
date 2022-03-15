@@ -33,8 +33,16 @@ As a result, this allows the APU to find the best clock speed for that moment in
 ## Benefits of using AATU
 Benefits of using AMD APU Tuning Utility/Ryzen Controller on your laptop:
 - You can gain anywhere from as little as 5% to as much as 35%+ extra performance for absolutely free without having to buy a new laptop, prolonging the life of your existing Zen-based mobile APU.
+
 ![alt text](https://cdn.discordapp.com/attachments/772164404598276135/870293764688715776/Screenshot_2021-07-29_at_14.png)
 *stock power limits and results will vary depending on the laptop make, model and specifications. This data is here to prove that you can gain extra performance when allowing more power draw.
+
+You can also gain more performance on unlocked HX/G APUs (4000 series and newer) by using Apative Performance mode with Turbo Boost Overdrive CPU enabled.
+
+AMD PBO with +200MHz offset: AATU TBO CPU with same +200MHz offset: 
+![image](https://user-images.githubusercontent.com/20888782/158470309-5c489e11-1920-4373-a589-eff03d79d4d8.png)
+
+
 
 ## Installation
 - Go to [release page](https://github.com/JamesCJ60/AMD-APU-Tuning-Utility/releases)
