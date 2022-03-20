@@ -75,7 +75,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(616, 75);
             this.label1.TabIndex = 2;
-            this.label1.Text = "For the best experience possible, if you have a dGPU lock all applications to you" +
+            this.label1.Text = "For the best experience possible, if you have a dGPU, lock all applications to you" +
     "r iGPU to save power.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 

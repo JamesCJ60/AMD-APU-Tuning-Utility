@@ -313,7 +313,7 @@ namespace AMD_APU_Tuning_Utility
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(351, 36);
             this.label14.TabIndex = 220;
-            this.label14.Text = "Warning: Overclocking can cause stability issues or \r\neven damage  to hardware th" +
+            this.label14.Text = "Warning: Overclocking can cause stability issues or \r\neven damage to hardware th" +
     "at we are not liable for. ";
             // 
             // Theme
@@ -332,7 +332,7 @@ namespace AMD_APU_Tuning_Utility
             this.label7.Size = new System.Drawing.Size(363, 32);
             this.label7.TabIndex = 214;
             this.label7.Text = "iGPU overclocking only works on the 4000 series and select \r\n5000U series APUs e." +
-    "g. 5300U, 5500U, 5700U";
+    "g. 5300U, 5500U, 5700U.";
             // 
             // label13
             // 
@@ -356,7 +356,7 @@ namespace AMD_APU_Tuning_Utility
             this.label15.Size = new System.Drawing.Size(395, 32);
             this.label15.TabIndex = 220;
             this.label15.Text = "iGPU overclocking will cause the clock speed to be locked to\r\nwhat you set and wi" +
-    "ll require a system reboot to go back to normal";
+    "ll require a system reboot to go back to normal.";
             // 
             // nudcoGFX
             // 
