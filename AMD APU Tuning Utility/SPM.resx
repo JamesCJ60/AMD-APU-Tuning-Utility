@@ -124,8 +124,8 @@
     <value>104, 17</value>
   </metadata>
   <data name="label14.Text" xml:space="preserve">
-    <value>Warning: Overclocking can cause stability issues or even damage  to hardware that we are not 
-liable for. Overclocking also only works with unlocked APUs that are 4000 sereis based and newer
+    <value>Warning: Overclocking can cause stability issues or even damage to hardware that we are not 
+liable for. Also, overclocking only works with unlocked APUs that are 4000-series-based and newer.
 
 TBO CPU as of now only works in multi core workloads. TBO CPU will be updated to support single 
 core in the future.

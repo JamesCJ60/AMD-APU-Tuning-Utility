@@ -414,7 +414,7 @@ namespace AMD_APU_Tuning_Utility
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(322, 30);
             this.label1.TabIndex = 64;
-            this.label1.Text = "You may need to restart AATU or select a diffrent menu for \r\ntheme settings to ta" +
+            this.label1.Text = "You may need to restart AATU or select a different menu for \r\ntheme settings to ta" +
     "ke full effect.";
             // 
             // cbCustomTheme

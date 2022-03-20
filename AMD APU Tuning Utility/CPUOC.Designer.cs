@@ -267,9 +267,9 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(584, 32);
             this.label14.TabIndex = 236;
-            this.label14.Text = "Warning: Overclocking can cause stability issues or even damage  to hardware that" +
-    " we are not \r\nliable for. Overclocking also only works with unlocked APUs that a" +
-    "re 4000 sereis based and newer";
+            this.label14.Text = "Warning: Overclocking can cause stability issues or even damage to hardware that" +
+    " we are not \r\nliable for. Also, overclocking only works with unlocked APUs that a" +
+    "re 4000-series-based and newer.";
             // 
             // Theme
             // 
@@ -337,7 +337,7 @@
             this.label7.Size = new System.Drawing.Size(576, 32);
             this.label7.TabIndex = 240;
             this.label7.Text = "Warning: Setting a high VID can cause damage to your APU in many ways especially " +
-    "without the \r\nthermal head room.\r\n";
+    "without the \r\nthermal headroom.\r\n";
             // 
             // cbCPUCO
             // 
