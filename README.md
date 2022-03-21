@@ -15,7 +15,7 @@ Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would
 - It's a new Ryzen APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
 - It's a little lightweight Ryzen Master for laptops that allows you to control the power limits of your APU.
 - Works best on 2xxx, 3xxx, 4xxx, and 5xxx series Ryzen Mobile with experimental 6xxx series support and can also work on Desktop APUs.
-- As seen in: https://www.youtube.com/watch?v=UGvTtqHPuHU (Thanks ETA Prime for making the video 🥰)
+- Tutorial created by ETA Prime: https://www.youtube.com/watch?v=UGvTtqHPuHU
 
 ### What is adaptive eco?
 Adaptive eco is a mode built into AMD APU Tuning Utility that uses an algorithm to lower your APU's power limit over time as your battery life decreases. In short, adaptive eco allows you to keep as much performance as possible while also attempting to improve battery life over time. Adaptive eco does this by constantly monitoring the battery life of your laptop. That data is then used to make adjustments based on that, for example, how much should be removed or added to the APUs power limit while also changing windows power plan settings to further the impact.
