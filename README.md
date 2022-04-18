@@ -10,6 +10,7 @@ Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would
 - [Installation](#installation)
 - [Disclaimers & Cautions](#disclaimers-&-cautions)
 - [Source Code](#source-code)
+- [Basic CPU/APU Support List](#basic-apu-support-list)
 
 ## What is AATU?
 - It's a new Ryzen APU tuning utility created by one of the developers of [Ryzen Controller](https://gitlab.com/ryzen-controller-team/ryzen-controller).
@@ -66,3 +67,112 @@ You can find all the source code for the many different versions and elements of
 
 ## Debugging missing file errors
 In the event you get an error from windows that you are missing files, for example, VCRuntime140.dll or ucrtbased.dll try installing/reinstalling Visual C++ found [here](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0)
+
+## Basic APU Support List:
+This list does not include "Pro", "Embedded" APUs or custom APUs that may be supported like found in the Steam Deck.
+### 200 Series:
+200G:
+- Athlon 200GE
+- Athlon 220GE
+- Athlon 240GE
+
+### 300 Series:
+300G:
+- Athlon 300GE
+- Athlon 320GE
+
+### 2000 Series:
+2000U:
+- Ryzen 3 2200U
+- Ryzen 3 2300U
+- Ryzen 5 2500U
+- Ryzen 7 2700U
+
+2000H:
+- Ryzen 5 2600H
+- Ryzen 7 2800H
+
+2000G:
+- Ryzen 3 2200G/GE
+- Ryzen 5 2400G/GE
+
+### 3000 Series:
+3000U:
+- Ryzen 3 3200U
+- Ryzen 3 3300U
+- Ryzen 5 3500U
+- Ryzen 7 3700U
+
+3000H:
+- Ryzen 5 3550H
+- Ryzen 7 3750H
+
+3000G:
+- Athlon 3000GE
+- Ryzen 3 3200G/GE
+- Ryzen 5 3400G/GE
+
+### 4000 Series:
+4000U:
+- Ryzen 3 4300U
+- Ryzen 5 4500U
+- Ryzen 5 4600U
+- Ryzen 7 4700U
+- Ryzen 7 4800U
+
+4000H:
+- Ryzen 5 4600H/HS
+- Ryzen 7 4800H/HS
+
+4000G:
+- Athlon Gold 4100GE
+- Ryzen 3 4300G/GE
+- Ryzen 5 4600G/GE
+- Ryzen 7 4700G/GE
+
+4000:
+- Ryzen 3 4100
+- Ryzen 5 4500
+- Ryzen 7 4700
+
+### 5000 Series:
+5000U:
+- Ryzen 3 5300U
+- Ryzen 3 5400U
+- Ryzen 3 5425U
+- Ryzen 5 5500U
+- Ryzen 5 5600U
+- Ryzen 5 5625U
+- Ryzen 7 5700U
+- Ryzen 7 5800U
+- Ryzen 7 5825U
+
+5000H:
+- Ryzen 5 5600H/HS
+- Ryzen 7 5800H/HS
+- Ryzen 9 5900HX/HS
+- Ryzen 9 5980HX/HS
+
+5000G:
+- Ryzen 3 5300G/GE
+- Ryzen 5 5600G/GE
+- Ryzen 7 5700G/GE
+
+5000:
+- Ryzen 3 5300
+- Ryzen 5 5500
+- Ryzen 7 5700
+
+### 6000 Series:
+6000U:
+- Ryzen 5 6600U
+- Ryzen 7 6800U
+
+6000H:
+- Ryzen 5 6600H/HS
+- Ryzen 7 6800H/HS
+- Ryzen 9 6900HX/HS
+- Ryzen 9 6980HX/HS
+
+6000G:
+- TBA
