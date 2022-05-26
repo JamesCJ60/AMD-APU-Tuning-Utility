@@ -2,7 +2,7 @@
 
 If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2022` or `@sbski#2700` in our [discord community server](https://discord.gg/M3hVqnT4pQ). 
 
-Thanks to the [RyzenADJ Team](https://github.com/FlyGoat/RyzenAdj). If you would like to support the development of AMD APU Tuning Utility, you can do so [here](https://www.patreon.com/aatusoftware)
+If you would like to support the development of AMD APU Tuning Utility by donating, you can do so via [Patreon](https://www.patreon.com/aatusoftware) or [PayPal](paypal.me/JamesCJ60)
 
 ## Readme Index
 - [What is AATU?](#what-is-aatu)
