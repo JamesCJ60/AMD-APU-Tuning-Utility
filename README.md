@@ -1,3 +1,5 @@
+# [Development has now moved to a new project that covers both Intel and AMD](https://github.com/JamesCJ60/Universal-x86-Tuning-Utility)
+
 # AMD APU Tuning Utility
 
 If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2022` or `@sbski#2700` in our [discord community server](https://discord.gg/M3hVqnT4pQ). 
