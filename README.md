@@ -4,7 +4,7 @@
 
 If you come across any issues or errors with AATU please open an issue or ping `@JamesCJ#2022` or `@sbski#2700` in our [discord community server](https://discord.gg/M3hVqnT4pQ). 
 
-If you would like to support the development of AMD APU Tuning Utility by donating, you can do so via [Patreon](https://www.patreon.com/aatusoftware) or [PayPal](https://www.paypal.me/JamesCJ60)
+If you would like to support the development of AMD APU Tuning Utility by donating, you can do so via [Patreon](https://www.patreon.com/uxtusoftware) or [PayPal](https://www.paypal.me/JamesCJ60)
 
 [![Github All Releases](https://img.shields.io/github/downloads/JamesCJ60/AMD-APU-Tuning-Utility/total.svg)]() [![Windows](https://svgshare.com/i/ZhY.svg)]() [![GitHub stars](https://img.shields.io/github/stars/JamesCJ60/AMD-APU-Tuning-Utility?style=social&label=Star&maxAge=2592000)]() [![GitHub forks](https://img.shields.io/github/forks/JamesCJ60/AMD-APU-Tuning-Utility?style=social&label=Fork&maxAge=2592000)]()
 
