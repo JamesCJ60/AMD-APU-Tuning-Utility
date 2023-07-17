@@ -6,7 +6,11 @@ If you come across any issues or errors with AATU please open an issue or ping `
 
 If you would like to support the development of AMD APU Tuning Utility by donating, you can do so via [Patreon](https://www.patreon.com/uxtusoftware) or [PayPal](https://www.paypal.me/JamesCJ60)
 
-[![Github All Releases](https://img.shields.io/github/downloads/JamesCJ60/AMD-APU-Tuning-Utility/total.svg)]() [![Windows](https://svgshare.com/i/ZhY.svg)]() [![GitHub stars](https://img.shields.io/github/stars/JamesCJ60/AMD-APU-Tuning-Utility?style=social&label=Star&maxAge=2592000)]() [![GitHub forks](https://img.shields.io/github/forks/JamesCJ60/AMD-APU-Tuning-Utility?style=social&label=Fork&maxAge=2592000)]()
+[![Download Latest](https://img.shields.io/github/downloads/JamesCJ60/Universal-x86-Tuning-Utility/latest/total?style=flat-square&color=orange&label=Download%20Latest)](https://github.com/JamesCJ60/Universal-x86-Tuning-Utility/releases/latest)
+[![Total Downloads](https://img.shields.io/github/downloads/JamesCJ60/Universal-x86-Tuning-Utility/total?style=flat-square&color=orange&label=Download%20Total)](https://github.com/JamesCJ60/Universal-x86-Tuning-Utility/releases/latest)
+[![discord](https://img.shields.io/discord/772105072720871435?color=orange&label=Discord&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/3EkYMZGJwq)
+[![Donations](https://img.shields.io/badge/PayPal-00457C?style=flat-square&color=orange&label=Donations&logo=paypal&logoColor=white)](https://www.paypal.com/paypalme/JamesCJ60)
+[![Support us on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Duxtusoftware%26type%3Dpatrons&style=flat-square&color=orange&label=Patreon&logoColor=white)](https://patreon.com/uxtusoftware)
 
 
 ## Readme Index
